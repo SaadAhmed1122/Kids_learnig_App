@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstQuestionAct">
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="448dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/borders"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/image3"
+            android:layout_width="150dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="7dp"
+            android:onClick="img1"
+
+            android:src="@drawable/ele" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/borders"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="150dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="7dp"
+            android:onClick="img1"
+
+            android:src="@drawable/eleeee" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/borders">
+
+            <ImageView
+                android:id="@+id/crossimg1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/delete_mark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/borders">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:id="@+id/crossimg2"
+                app:srcCompat="@drawable/delete_mark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/borders">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/crossimg3"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/delete_mark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/borders">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:id="@+id/crossimg4"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/delete_mark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/borders">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:id="@+id/crossimg5"
+                app:srcCompat="@drawable/delete_mark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/borders">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_weight="1"
+                android:id="@+id/crossimg6"
+                app:srcCompat="@drawable/delete_mark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/borders">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:id="@+id/crossimg7"
+                app:srcCompat="@drawable/delete_mark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/borders">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/crossimg8"
+                android:visibility="invisible"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/delete_mark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/borders">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:id="@+id/crossimg9"
+                app:srcCompat="@drawable/delete_mark" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/borders">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:id="@+id/crossimg10"
+                app:srcCompat="@drawable/delete_mark" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+<!--    Side bar circles-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/questioncircle">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+               android:id="@+id/grenc1"
+                android:background="@drawable/circle" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/questioncircle">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/grenc2"
+                android:visibility="invisible"
+                android:background="@drawable/circle" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/questioncircle">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/grenc3"
+                android:visibility="invisible"
+                android:background="@drawable/circle" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/questioncircle">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/grenc4"
+                android:visibility="invisible"
+                android:background="@drawable/circle" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/questioncircle">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:id="@+id/grenc5"
+                android:visibility="invisible"
+                android:background="@drawable/circle" />
+
+        </LinearLayout>    <LinearLayout
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="3dp"
+        android:background="@drawable/questioncircle">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/grenc6"
+            android:visibility="invisible"
+            android:background="@drawable/circle" />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/questioncircle">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/grenc7"
+                android:visibility="invisible"
+                android:background="@drawable/circle" />
+
+        </LinearLayout> <LinearLayout
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="3dp"
+        android:background="@drawable/questioncircle">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/grenc8"
+            android:visibility="invisible"
+            android:background="@drawable/circle" />
+
+    </LinearLayout> <LinearLayout
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="3dp"
+        android:background="@drawable/questioncircle">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/grenc9"
+            android:visibility="invisible"
+            android:background="@drawable/circle" />
+
+    </LinearLayout> <LinearLayout
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="3dp"
+        android:background="@drawable/questioncircle">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/grenc10"
+            android:visibility="invisible"
+            android:background="@drawable/circle" />
+
+    </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select One From the Following"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/mainimg"
+        android:layout_width="200dp"
+        android:layout_height="152dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:srcCompat="@drawable/kuto" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="160dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/borders"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="150dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="7dp"
+            android:onClick="img1"
+
+            android:src="@drawable/elee" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/scroetxt"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="96dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
