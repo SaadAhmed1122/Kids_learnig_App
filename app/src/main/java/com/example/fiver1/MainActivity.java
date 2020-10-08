@@ -26,4 +26,8 @@ public class MainActivity extends AppCompatActivity {
     public void showanotherac(View view) {
         startActivity(new Intent(MainActivity.this,GraphicActivity.class));
     }
+
+    public void showgetgallery(View view) {
+        startActivity(new Intent(MainActivity.this,GetimagesGallery.class));
+    }
 }
