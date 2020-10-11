@@ -17,21 +17,37 @@
     android:layout_height="match_parent">
 
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+
+            android:layout_height="wrap_content">
         <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+            android:layout_marginLeft="10dp"
         android:gravity="center"
             android:layout_gravity="center"
         android:text="SELEZIONA UNA SCHEDA O IMPOSTA SEQUENZA"
         android:textColor="#000000"/>
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:onClick="showimgmain"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_baseline_add_circle_24"
+                tools:ignore="VectorDrawableCompat" />
+        </LinearLayout>
+
+
 <!--        app:layout_constraintBottom_toBottomOf="parent"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/textView2"-->
 <!--        app:layout_constraintVertical_bias="0.17000002">-->
@@ -115,7 +131,7 @@
                     android:layout_centerHorizontal="true"
                     android:background="@color/white"
 
-                    android:text="Emotions"
+                    android:text="EMOZIONI"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </RelativeLayout>
 
@@ -124,6 +140,7 @@
                 android:layout_width="131dp"
                 android:layout_height="140dp"
                 android:layout_margin="10dp"
+                android:onClick="questionsActcolour"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -183,7 +200,7 @@
                     android:layout_centerHorizontal="true"
                     android:background="@color/white"
 
-                    android:text="Colours"
+                    android:text="COLORI"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </RelativeLayout>
 
@@ -194,6 +211,7 @@
                 android:id="@+id/relativeLayout"
                 android:layout_width="131dp"
                 android:layout_height="140dp"
+                android:onClick="questionsActshape"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -260,7 +278,7 @@
                     android:layout_centerHorizontal="true"
                     android:background="@color/white"
 
-                    android:text="Shapes"
+                    android:text="FORME"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </RelativeLayout>
 
@@ -272,6 +290,7 @@
                 android:layout_width="131dp"
                 android:layout_height="140dp"
                 android:layout_margin="10dp"
+                android:onClick="questionsActartist"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -363,7 +382,7 @@
                     android:layout_centerHorizontal="true"
                     android:background="@color/white"
 
-                    android:text="Pet Name"
+                    android:text="ARTICOLI"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </RelativeLayout>
 
@@ -384,6 +403,7 @@
                 android:id="@+id/relativeLasyout2"
                 android:layout_width="131dp"
                 android:layout_height="140dp"
+                android:onClick="questionsActfruits"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -401,7 +421,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="79dp"
                         android:layout_marginTop="16dp"
-                        android:src="@drawable/threedog" />
+                        android:src="@drawable/c0" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -421,7 +441,7 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/m1" />
+                                android:src="@drawable/d0" />
 
                         </LinearLayout>
 
@@ -434,7 +454,7 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/m2"
+                                android:src="@drawable/d1"
                                 />
 
                         </LinearLayout>
@@ -448,7 +468,7 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/m3"
+                                android:src="@drawable/d2"
                                 />
 
                         </LinearLayout>
@@ -464,13 +484,14 @@
                     android:layout_centerHorizontal="true"
                     android:background="@color/white"
 
-                    android:text="Colours"
+                    android:text="CIBO"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/relativeLassyout2"
                 android:layout_width="131dp"
                 android:layout_height="140dp"
+                android:onClick="questionsActnumber"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -550,7 +571,7 @@
                     android:layout_centerHorizontal="true"
                     android:background="@color/white"
 
-                    android:text="Colours"
+                    android:text="NUMERI"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </RelativeLayout>
 
@@ -564,6 +585,101 @@
             <RelativeLayout
                 android:id="@+id/relativeLayoutb4"
                 android:layout_width="131dp"
+                android:layout_height="140dp"
+                android:layout_margin="10dp"
+                android:onClick="questionsActarticles"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="136dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/borders"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/x4" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/groupbox"
+
+                            android:layout_weight="1"
+                            >
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/w3" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/groupbox"
+
+                            android:layout_weight="1"
+                            >
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/w4" />
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/groupbox"
+
+                            >
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/w5" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/gnse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"
+
+                    android:text="IMMAGINI"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutKb4"
+                android:layout_width="131dp"
+                android:onClick="questionsActobjects"
                 android:layout_height="140dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
@@ -583,7 +699,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_marginTop="15dp"
-                        android:src="@drawable/kuto" />
+                        android:src="@drawable/o0" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -600,7 +716,7 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/w12" />
+                                android:src="@drawable/q1" />
 
                         </LinearLayout>
 
@@ -614,7 +730,7 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/w13" />
+                                android:src="@drawable/q4" />
 
 
 
@@ -631,7 +747,7 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/w14" />
+                                android:src="@drawable/q3" />
 
                         </LinearLayout>
 
@@ -641,14 +757,14 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/gnse"
+                    android:id="@+id/gKnse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:background="@color/white"
 
-                    android:text="Pet Name"
+                    android:text="OGGETTI"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </RelativeLayout>
 

@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showgetgallery(View view) {
-        startActivity(new Intent(MainActivity.this,GetimagesGallery.class));
+       // startActivity(new Intent(MainActivity.this,GetimagesGallery.class));
+    }
+
+    public void showimggmain(View view) {
+        startActivity(new Intent(MainActivity.this,Show_ImagesMain.class));
     }
 }

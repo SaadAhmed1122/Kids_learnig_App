@@ -1,6 +1,4 @@
-package com.example.fiver1;
-
-import android.graphics.Bitmap;
+package com.example.fiver1.model;
 
 public class Model {
 
@@ -16,6 +14,11 @@ public class Model {
         this.f_img = f_img;
         this.s_img = s_img;
         this.th_img = th_img;
+    }
+
+    public Model(int trueAnswer, int main_pro_images) {
+        this.trueAnswer = trueAnswer;
+        this.main_pro_images = main_pro_images;
     }
 
     public int getTrueAnswer() {
