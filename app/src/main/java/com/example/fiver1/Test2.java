@@ -165,8 +165,8 @@ public class Test2 extends AppCompatActivity {
                     scorcetxt.setText(a);
 
 
-                    wrong_questions[wrong_question_counter]=a;
-                    wrong_question_counter++;
+                   // wrong_questions[wrong_question_counter]=a;
+                    //wrong_question_counter++;
 
                     //  wrong_questions[wrong_question_counter] = a;
                     // wrong_question_counter++;
@@ -208,7 +208,6 @@ public class Test2 extends AppCompatActivity {
                     //           linearLayoutop3.setVisibility(View.GONE);
                 }
                 // anscnt++;
-
             }
             if (anscnt <= 10) {
                 displayquestion();
