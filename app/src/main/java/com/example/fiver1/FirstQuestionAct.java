@@ -65,72 +65,72 @@ public class FirstQuestionAct extends AppCompatActivity {
             };
     Model[] mQuestionBankcompletename = new Model[]
             {
-                    new Model(1,R.drawable.x3, R.drawable.w3 ,R.drawable.w4, R.drawable.w5),
-                    new Model(3,R.drawable.x4, R.drawable.w3 ,R.drawable.w6, R.drawable.w4),
-                    new Model(1,R.drawable.x5, R.drawable.w5 ,R.drawable.w10, R.drawable.w3),
-                    new Model(2,R.drawable.x8, R.drawable.w6 ,R.drawable.w8, R.drawable.w7),
-                    new Model(1,R.drawable.x16, R.drawable.w16 ,R.drawable.w15, R.drawable.w12),
-                    new Model(2,R.drawable.x12, R.drawable.w15 ,R.drawable.w12, R.drawable.w14),
-                    new Model(3,R.drawable.x10, R.drawable.w11 ,R.drawable.w9, R.drawable.w10),
-                    new Model(2,R.drawable.x17, R.drawable.w14 ,R.drawable.w17, R.drawable.w18),
-                    new Model(2,R.drawable.x20, R.drawable.w11 ,R.drawable.w20, R.drawable.w19),
-                    new Model(1,R.drawable.x7, R.drawable.w7 ,R.drawable.w4, R.drawable.w12),
+//                    new Model(1,R.drawable.x3, R.drawable.w3 ,R.drawable.w4, R.drawable.w5),
+//                    new Model(3,R.drawable.x4, R.drawable.w3 ,R.drawable.w6, R.drawable.w4),
+//                    new Model(1,R.drawable.x5, R.drawable.w5 ,R.drawable.w10, R.drawable.w3),
+//                    new Model(2,R.drawable.x8, R.drawable.w6 ,R.drawable.w8, R.drawable.w7),
+//                    new Model(1,R.drawable.x16, R.drawable.w16 ,R.drawable.w15, R.drawable.w12),
+//                    new Model(2,R.drawable.x12, R.drawable.w15 ,R.drawable.w12, R.drawable.w14),
+//                    new Model(3,R.drawable.x10, R.drawable.w11 ,R.drawable.w9, R.drawable.w10),
+//                    new Model(2,R.drawable.x17, R.drawable.w14 ,R.drawable.w17, R.drawable.w18),
+//                    new Model(2,R.drawable.x20, R.drawable.w11 ,R.drawable.w20, R.drawable.w19),
+//                    new Model(1,R.drawable.x7, R.drawable.w7 ,R.drawable.w4, R.drawable.w12),
 
             };
     Model[] mQuestionBankcompletefruit = new Model[]
             {
-                    new Model(1,R.drawable.c0, R.drawable.d0 ,R.drawable.d7, R.drawable.d5),
-                    new Model(1,R.drawable.c8, R.drawable.d8 ,R.drawable.d10, R.drawable.d11),
-                    new Model(1,R.drawable.c5, R.drawable.d5 ,R.drawable.d0, R.drawable.d13),
-                    new Model(3,R.drawable.c2, R.drawable.d6 ,R.drawable.d3, R.drawable.d2),
-                    new Model(1,R.drawable.c9, R.drawable.d9 ,R.drawable.d6, R.drawable.d3),
-                    new Model(2,R.drawable.c18, R.drawable.d12 ,R.drawable.d10, R.drawable.d8),
-                    new Model(2,R.drawable.c16, R.drawable.d17 ,R.drawable.d16, R.drawable.d15),
-                    new Model(1,R.drawable.c13, R.drawable.d13 ,R.drawable.d12, R.drawable.d11),
-                    new Model(3,R.drawable.c24, R.drawable.d16 ,R.drawable.d20, R.drawable.d24),
-                    new Model(2,R.drawable.c21, R.drawable.d23 ,R.drawable.d21, R.drawable.d17),
+//                    new Model(1,R.drawable.c0, R.drawable.d0 ,R.drawable.d7, R.drawable.d5),
+//                    new Model(1,R.drawable.c8, R.drawable.d8 ,R.drawable.d10, R.drawable.d11),
+//                    new Model(1,R.drawable.c5, R.drawable.d5 ,R.drawable.d0, R.drawable.d13),
+//                    new Model(3,R.drawable.c2, R.drawable.d6 ,R.drawable.d3, R.drawable.d2),
+//                    new Model(1,R.drawable.c9, R.drawable.d9 ,R.drawable.d6, R.drawable.d3),
+//                    new Model(2,R.drawable.c18, R.drawable.d12 ,R.drawable.d10, R.drawable.d8),
+//                    new Model(2,R.drawable.c16, R.drawable.d17 ,R.drawable.d16, R.drawable.d15),
+//                    new Model(1,R.drawable.c13, R.drawable.d13 ,R.drawable.d12, R.drawable.d11),
+//                    new Model(3,R.drawable.c24, R.drawable.d16 ,R.drawable.d20, R.drawable.d24),
+//                    new Model(2,R.drawable.c21, R.drawable.d23 ,R.drawable.d21, R.drawable.d17),
 
             };
     Model[] mQuestionBankcompletenumbers = new Model[]
             {
-                    new Model(1,R.drawable.n0, R.drawable.m0 ,R.drawable.m8, R.drawable.m9),
-                    new Model(1,R.drawable.n1, R.drawable.m1 ,R.drawable.m2, R.drawable.m6),
-                    new Model(3,R.drawable.n3, R.drawable.m8 ,R.drawable.m6, R.drawable.m3),
-                    new Model(1,R.drawable.n5, R.drawable.m5 ,R.drawable.m2, R.drawable.m6),
-                    new Model(2,R.drawable.n7, R.drawable.m1 ,R.drawable.m7, R.drawable.m9),
-                    new Model(2,R.drawable.n9, R.drawable.m1 ,R.drawable.m9, R.drawable.m8),
-                    new Model(3,R.drawable.n2, R.drawable.m0 ,R.drawable.m7, R.drawable.m2),
-                    new Model(1,R.drawable.n4, R.drawable.m4 ,R.drawable.m9, R.drawable.m3),
-                    new Model(2,R.drawable.n6, R.drawable.m1 ,R.drawable.m6, R.drawable.m8),
-                    new Model(1,R.drawable.n8, R.drawable.m8 ,R.drawable.m2, R.drawable.m6),
+//                    new Model(1,R.drawable.n0, R.drawable.m0 ,R.drawable.m8, R.drawable.m9),
+//                    new Model(1,R.drawable.n1, R.drawable.m1 ,R.drawable.m2, R.drawable.m6),
+//                    new Model(3,R.drawable.n3, R.drawable.m8 ,R.drawable.m6, R.drawable.m3),
+//                    new Model(1,R.drawable.n5, R.drawable.m5 ,R.drawable.m2, R.drawable.m6),
+//                    new Model(2,R.drawable.n7, R.drawable.m1 ,R.drawable.m7, R.drawable.m9),
+//                    new Model(2,R.drawable.n9, R.drawable.m1 ,R.drawable.m9, R.drawable.m8),
+//                    new Model(3,R.drawable.n2, R.drawable.m0 ,R.drawable.m7, R.drawable.m2),
+//                    new Model(1,R.drawable.n4, R.drawable.m4 ,R.drawable.m9, R.drawable.m3),
+//                    new Model(2,R.drawable.n6, R.drawable.m1 ,R.drawable.m6, R.drawable.m8),
+//                    new Model(1,R.drawable.n8, R.drawable.m8 ,R.drawable.m2, R.drawable.m6),
 
             };
-    Model[] mQuestionBankcompleteanimals = new Model[]
-            {
-                    new Model(2,R.drawable.b0, R.drawable.a0 ,R.drawable.a4, R.drawable.a5),
-                    new Model(1,R.drawable.b1, R.drawable.a1 ,R.drawable.a7, R.drawable.a8),
-                    new Model(2,R.drawable.b2, R.drawable.a6 ,R.drawable.a2, R.drawable.a11),
-                    new Model(3,R.drawable.b3, R.drawable.a1 ,R.drawable.a8, R.drawable.a3),
-                    new Model(2,R.drawable.b10, R.drawable.a12 ,R.drawable.a10, R.drawable.a21),
-                    new Model(1,R.drawable.b23, R.drawable.a23 ,R.drawable.a22, R.drawable.a24),
-                    new Model(3,R.drawable.b18, R.drawable.a17 ,R.drawable.a13, R.drawable.a18),
-                    new Model(2,R.drawable.b12, R.drawable.a14 ,R.drawable.a12, R.drawable.a19),
-                    new Model(1,R.drawable.b16, R.drawable.a16 ,R.drawable.a11, R.drawable.a5),
-                    new Model(2,R.drawable.b22, R.drawable.a23 ,R.drawable.a22, R.drawable.a24),
+    Model[] mQuestionBankcompleteanimals = new Model[]{
+//            {
+//                    new Model(2,R.drawable.b0, R.drawable.a0 ,R.drawable.a4, R.drawable.a5),
+//                    new Model(1,R.drawable.b1, R.drawable.a1 ,R.drawable.a7, R.drawable.a8),
+//                    new Model(2,R.drawable.b2, R.drawable.a6 ,R.drawable.a2, R.drawable.a11),
+//                    new Model(3,R.drawable.b3, R.drawable.a1 ,R.drawable.a8, R.drawable.a3),
+//                    new Model(2,R.drawable.b10, R.drawable.a12 ,R.drawable.a10, R.drawable.a21),
+//                    new Model(1,R.drawable.b23, R.drawable.a23 ,R.drawable.a22, R.drawable.a24),
+//                    new Model(3,R.drawable.b18, R.drawable.a17 ,R.drawable.a13, R.drawable.a18),
+//                    new Model(2,R.drawable.b12, R.drawable.a14 ,R.drawable.a12, R.drawable.a19),
+//                    new Model(1,R.drawable.b16, R.drawable.a16 ,R.drawable.a11, R.drawable.a5),
+//                    new Model(2,R.drawable.b22, R.drawable.a23 ,R.drawable.a22, R.drawable.a24),
 
             };
     Model[] mQuestionBankcompleteobjects = new Model[]
             {
-                    new Model(3,R.drawable.q0, R.drawable.o1 ,R.drawable.o4, R.drawable.o0),
-                    new Model(1,R.drawable.q1, R.drawable.o1 ,R.drawable.o4, R.drawable.o7),
-                    new Model(1,R.drawable.q2, R.drawable.o2 ,R.drawable.o9, R.drawable.o6),
-                    new Model(2,R.drawable.q3, R.drawable.o7 ,R.drawable.o3, R.drawable.o5),
-                    new Model(3,R.drawable.q4, R.drawable.o1 ,R.drawable.o0, R.drawable.o4),
-                    new Model(2,R.drawable.q5, R.drawable.o2 ,R.drawable.o5, R.drawable.o6),
-                    new Model(2,R.drawable.q6, R.drawable.o9 ,R.drawable.o6, R.drawable.o5),
-                    new Model(3,R.drawable.q7, R.drawable.o1 ,R.drawable.o8, R.drawable.o7),
-                    new Model(1,R.drawable.q8, R.drawable.o8 ,R.drawable.o4, R.drawable.o0),
-                    new Model(3,R.drawable.q9, R.drawable.o1 ,R.drawable.o4, R.drawable.o9),
+//                    new Model(3,R.drawable.q0, R.drawable.o1 ,R.drawable.o4, R.drawable.o0),
+//                    new Model(1,R.drawable.q1, R.drawable.o1 ,R.drawable.o4, R.drawable.o7),
+//                    new Model(1,R.drawable.q2, R.drawable.o2 ,R.drawable.o9, R.drawable.o6),
+//                    new Model(2,R.drawable.q3, R.drawable.o7 ,R.drawable.o3, R.drawable.o5),
+//                    new Model(3,R.drawable.q4, R.drawable.o1 ,R.drawable.o0, R.drawable.o4),
+//                    new Model(2,R.drawable.q5, R.drawable.o2 ,R.drawable.o5, R.drawable.o6),
+//                    new Model(2,R.drawable.q6, R.drawable.o9 ,R.drawable.o6, R.drawable.o5),
+//                    new Model(3,R.drawable.q7, R.drawable.o1 ,R.drawable.o8, R.drawable.o7),
+//                    new Model(1,R.drawable.q8, R.drawable.o8 ,R.drawable.o4, R.drawable.o0),
+//                    new Model(3,R.drawable.q9, R.drawable.o1 ,R.drawable.o4, R.drawable.o9),
 
             };
 int a=0;

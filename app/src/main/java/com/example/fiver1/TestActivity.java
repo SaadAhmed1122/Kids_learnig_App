@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -64,7 +66,9 @@ public class TestActivity<c> extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_test);
+
         opt1= findViewById(R.id.image1x);
         op2 = findViewById(R.id.imagce2);
         op3 = findViewById(R.id.imagne3);
@@ -579,5 +583,6 @@ public class TestActivity<c> extends AppCompatActivity {
         }
 
     }
+
 
 }
