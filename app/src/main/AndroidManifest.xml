@@ -9,7 +9,16 @@
         android:roundIcon="@drawable/kuto"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Test2" android:theme="@style/AppTheme2" android:screenOrientation="landscape">
+        <activity android:name=".TravelAct"  android:screenOrientation="landscape" ></activity>
+        <activity android:name=".FoodActivity"  android:screenOrientation="landscape"  />
+        <activity android:name=".Animals_question"   android:screenOrientation="landscape" />
+        <activity android:name=".NumbersAct"   android:screenOrientation="landscape"  />
+        <activity
+            android:name=".Sequencegame"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".FinalmainScreen"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,10 +26,18 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Colours_question_act"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Test3"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".EmoQuestionsActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme2" />
+        <activity
             android:name=".TestActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape" />
         <activity android:name=".ScoringPage" />
         <activity android:name=".AddImge" />
         <activity android:name=".Show_ImagesMain" />
@@ -32,7 +49,7 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
