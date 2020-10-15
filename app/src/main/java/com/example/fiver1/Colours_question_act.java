@@ -20,6 +20,7 @@ public class Colours_question_act extends AppCompatActivity {
     private static final String TAG = "GETB";
     int mCurrentIndex=-1;
     int[] questions;
+    int seq;
     int[][] answers;
     int[] wrong_questions;
     View greendot1,greendot2,greendot3,greendot4,greendot5,greendot6,greendot7,greendot8,greendot9,greendot10;
@@ -110,9 +111,15 @@ public class Colours_question_act extends AppCompatActivity {
 
         scorcetxt.setText(questions[queue[numberofquestioncomplete-1]]);
 
+
+        seq = getIntent().getIntExtra("value",0);
+        if(seq==1 || seq==2 || seq==3 || seq==4 ||seq==5 || seq==6|| seq==7){
+            show_mark(seq);
+        }
+
     }
     public void displayquestion () {
-        if(anscnt <= 9) {
+        if(anscnt < 10) {
             //  TextView ques = (TextView) findViewById(R.id.lbl_question);
             ImageView opt1 = (ImageView) findViewById(R.id.image1x);
             ImageView opt2 = (ImageView) findViewById(R.id.imagce2);
@@ -143,21 +150,26 @@ public class Colours_question_act extends AppCompatActivity {
 
     private void condition() {
 
-        if (anscnt >= 10) {
-            Toast.makeText(getApplicationContext(),"Quiz is completed. Thankyou", Toast.LENGTH_LONG).show();
+        if (anscnt > 10) {
+            if(seq==1 || seq==2 || seq==3 || seq==4 ||seq==5 || seq==6|| seq==7){
+                finish();}
+            else {
+                Toast.makeText(getApplicationContext(),"Quiz is completed. Thankyou", Toast.LENGTH_LONG).show();
 
-            //  scorcetxt.setText("Your_Score_is_:"+correct_ans_count+"Wrong :"+wrong_ans_count);
+                //  scorcetxt.setText("Your_Score_is_:"+correct_ans_count+"Wrong :"+wrong_ans_count);
 
-            // showwronglist();
-            Intent i = new Intent(this,ScoringPage.class);
-            //    String user_name = i.getStringExtra("name");
-            // here i just want to pass array to next activity
-            // Intent intd = new Intent(getApplicationContext(), ScoringPage.class);
-            //intd.putExtra("user_name",user_name);
-            i.putExtra("Wrong", Integer.toString(wrong_ans_count));
-            startActivity(i);
-            finish();
+                // showwronglist();
+                Intent i = new Intent(this,ScoringPage.class);
+                //    String user_name = i.getStringExtra("name");
+                // here i just want to pass array to next activity
+                // Intent intd = new Intent(getApplicationContext(), ScoringPage.class);
+                //intd.putExtra("user_name",user_name);
+                i.putExtra("Wrong", Integer.toString(wrong_ans_count));
+                startActivity(i);
+                finish();
+            }
         }
+
 
         ImageView opt1 = (ImageView) findViewById(R.id.image1x);
         ImageView opt2 = (ImageView) findViewById(R.id.imagce2);
@@ -170,13 +182,14 @@ public class Colours_question_act extends AppCompatActivity {
             if (opt1.isPressed() == true) {
                 if ((correct_answer[queue[numberofquestioncomplete - 1]] == 0)) {
                     correct_ans_count++;
-                   // Toast.makeText(this, "Your Answer is true", Toast.LENGTH_SHORT).show();
+                    // Toast.makeText(this, "Your Answer is true", Toast.LENGTH_SHORT).show();
                     scorcetxt.setText("Your Score is :" + correct_ans_count);
-                    show_mark(mCurrentIndex);
+                    // show_mark(mCurrentIndex);
+                    showgreen(mCurrentIndex);
                     displayquestion();
                     anscnt++;
                 } else {
-                   // Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
                     wrong_ans_count++;
                     linearLayoutop1.setVisibility(View.GONE);
                     // int a = questions[queue[numberofquestioncomplete - 1]];
@@ -204,13 +217,14 @@ public class Colours_question_act extends AppCompatActivity {
             if (opt2.isPressed() == true) {
                 if ((correct_answer[queue[numberofquestioncomplete - 1]] == 1)) {
                     correct_ans_count++;
-                   // Toast.makeText(this,"Your Answer is true", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this,"Your Answer is true", Toast.LENGTH_SHORT).show();
                     scorcetxt.setText("Your Score is :" + correct_ans_count);
-                    show_mark(mCurrentIndex);
+                    //show_mark(mCurrentIndex);
+                    showgreen(mCurrentIndex);
                     displayquestion();
                     anscnt++;
                 } else {
-                    //Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
                     linearLayoutop2.setVisibility(View.GONE);
                     wrong_ans_count++;
                     //   int a = questions[queue[numberofquestioncomplete - 1]];
@@ -227,13 +241,14 @@ public class Colours_question_act extends AppCompatActivity {
             if (opt3.isPressed() == true) {
                 if (correct_answer[queue[numberofquestioncomplete - 1]] == 2) {
                     correct_ans_count++;
-                   // Toast.makeText(this, "Your Answer is true", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this, "Your Answer is true", Toast.LENGTH_SHORT).show();
                     scorcetxt.setText("Your Score is :" + correct_ans_count);
-                    show_mark(mCurrentIndex);
+                    //show_mark(mCurrentIndex);
+                    showgreen(mCurrentIndex);
                     displayquestion();
                     anscnt++;
                 } else {
-                    //Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
                     wrong_ans_count++;
                     linearLayoutop3.setVisibility(View.GONE);
                     //  int a = questions[queue[numberofquestioncomplete - 1]];
@@ -345,110 +360,164 @@ public class Colours_question_act extends AppCompatActivity {
         greendot10.setVisibility(View.INVISIBLE);
 
     }
-    private void show_mark(int count) {
+    private void showgreen(int count){
         if(count==0){
-            checkboxanswer1.setImageResource(R.drawable.ok_mark);
-            checkboxanswer1.setVisibility(View.VISIBLE);
             greendot1.setVisibility(View.VISIBLE);
         }
-        else if (count==20){
-            checkboxanswer1.setImageResource(R.drawable.delete_mark);
-            checkboxanswer1.setVisibility(View.VISIBLE);
-        }
         if(count == 1){
-            checkboxanswer2.setImageResource(R.drawable.ok_mark);
-            checkboxanswer2.setVisibility(View.VISIBLE);
             greendot2.setVisibility(View.VISIBLE);
         }
-        else if(count == 21){
-            checkboxanswer2.setImageResource(R.drawable.delete_mark);
-            checkboxanswer2.setVisibility(View.VISIBLE);
-        }
         else if(count == 2){
-            checkboxanswer3.setImageResource(R.drawable.ok_mark);
-            checkboxanswer3.setVisibility(View.VISIBLE);
             greendot3.setVisibility(View.VISIBLE);
         }
-        else if(count == 22){
-            checkboxanswer3.setImageResource(R.drawable.delete_mark);
-            checkboxanswer3.setVisibility(View.VISIBLE);
-        }
         else if(count == 3){
-            checkboxanswer4.setImageResource(R.drawable.ok_mark);
-            checkboxanswer4.setVisibility(View.VISIBLE);
             greendot4.setVisibility(View.VISIBLE);
 
         }
-        else if(count == 23){
-            checkboxanswer4.setImageResource(R.drawable.delete_mark);
-            checkboxanswer4.setVisibility(View.VISIBLE);
-
-        }
         else if(count == 4){
-            checkboxanswer5.setImageResource(R.drawable.ok_mark);
-            checkboxanswer5.setVisibility(View.VISIBLE);
             greendot5.setVisibility(View.VISIBLE);
 
         }
-        else if(count == 24){
-            checkboxanswer5.setImageResource(R.drawable.delete_mark);
-            checkboxanswer5.setVisibility(View.VISIBLE);
-
-        }
         else if(count == 5){
-            checkboxanswer6.setImageResource(R.drawable.ok_mark);
-            checkboxanswer6.setVisibility(View.VISIBLE);
             greendot6.setVisibility(View.VISIBLE);
 
         }
-        else if(count == 25){
-            checkboxanswer6.setImageResource(R.drawable.delete_mark);
-            checkboxanswer6.setVisibility(View.VISIBLE);
-
-        }
         else if(count == 6){
-            checkboxanswer7.setImageResource(R.drawable.ok_mark);
-            checkboxanswer7.setVisibility(View.VISIBLE);
             greendot7.setVisibility(View.VISIBLE);
 
         }
-        else if(count == 26){
-            checkboxanswer7.setImageResource(R.drawable.delete_mark);
-            checkboxanswer7.setVisibility(View.VISIBLE);
-
-        }
         else if(count == 7){
-            checkboxanswer8.setImageResource(R.drawable.ok_mark);
-            checkboxanswer8.setVisibility(View.VISIBLE);
             greendot8.setVisibility(View.VISIBLE);
 
         }
-        else if(count == 27){
-            checkboxanswer8.setImageResource(R.drawable.delete_mark);
-            checkboxanswer8.setVisibility(View.VISIBLE);
-
-        }
         else if(count == 8){
-            checkboxanswer9.setImageResource(R.drawable.ok_mark);
-            checkboxanswer9.setVisibility(View.VISIBLE);
             greendot9.setVisibility(View.VISIBLE);
 
         }
-        else if(count == 28){
-            checkboxanswer9.setImageResource(R.drawable.delete_mark);
-            checkboxanswer9.setVisibility(View.VISIBLE);
+
+        else if(count == 9){
+            greendot10.setVisibility(View.VISIBLE);
+        }
+
+    }
+
+    private void show_mark(int count) {
+        if(count==1){
+            checkboxanswer1.setImageResource(R.drawable.ok_mark);
+            checkboxanswer1.setVisibility(View.VISIBLE);
+            // greendot1.setVisibility(View.VISIBLE);
+        }
+        if(count == 2){
+            checkboxanswer1.setImageResource(R.drawable.ok_mark);
+            checkboxanswer1.setVisibility(View.VISIBLE);
+            checkboxanswer2.setImageResource(R.drawable.ok_mark);
+            checkboxanswer2.setVisibility(View.VISIBLE);
 
         }
+        else if(count == 3){
+            checkboxanswer1.setImageResource(R.drawable.ok_mark);
+            checkboxanswer1.setVisibility(View.VISIBLE);
+            checkboxanswer2.setImageResource(R.drawable.ok_mark);
+            checkboxanswer2.setVisibility(View.VISIBLE);
+            checkboxanswer3.setImageResource(R.drawable.ok_mark);
+            checkboxanswer3.setVisibility(View.VISIBLE);
+
+        }
+        else if(count ==4){
+            checkboxanswer1.setImageResource(R.drawable.ok_mark);
+            checkboxanswer1.setVisibility(View.VISIBLE);
+            checkboxanswer2.setImageResource(R.drawable.ok_mark);
+            checkboxanswer2.setVisibility(View.VISIBLE);
+            checkboxanswer3.setImageResource(R.drawable.ok_mark);
+            checkboxanswer3.setVisibility(View.VISIBLE);
+            checkboxanswer4.setImageResource(R.drawable.ok_mark);
+            checkboxanswer4.setVisibility(View.VISIBLE);
+
+        }
+        else if(count == 5){
+            checkboxanswer1.setImageResource(R.drawable.ok_mark);
+            checkboxanswer1.setVisibility(View.VISIBLE);
+            checkboxanswer2.setImageResource(R.drawable.ok_mark);
+            checkboxanswer2.setVisibility(View.VISIBLE);
+            checkboxanswer3.setImageResource(R.drawable.ok_mark);
+            checkboxanswer3.setVisibility(View.VISIBLE);
+            checkboxanswer4.setImageResource(R.drawable.ok_mark);
+            checkboxanswer4.setVisibility(View.VISIBLE);
+            checkboxanswer5.setImageResource(R.drawable.ok_mark);
+            checkboxanswer5.setVisibility(View.VISIBLE);
+
+
+        }
+        else if(count == 6){
+            checkboxanswer1.setImageResource(R.drawable.ok_mark);
+            checkboxanswer1.setVisibility(View.VISIBLE);
+            checkboxanswer2.setImageResource(R.drawable.ok_mark);
+            checkboxanswer2.setVisibility(View.VISIBLE);
+            checkboxanswer3.setImageResource(R.drawable.ok_mark);
+            checkboxanswer3.setVisibility(View.VISIBLE);
+            checkboxanswer4.setImageResource(R.drawable.ok_mark);
+            checkboxanswer4.setVisibility(View.VISIBLE);
+            checkboxanswer5.setImageResource(R.drawable.ok_mark);
+            checkboxanswer5.setVisibility(View.VISIBLE);
+            checkboxanswer6.setImageResource(R.drawable.ok_mark);
+            checkboxanswer6.setVisibility(View.VISIBLE);
+
+        }
+        else if(count == 7){
+            checkboxanswer1.setImageResource(R.drawable.ok_mark);
+            checkboxanswer1.setVisibility(View.VISIBLE);
+            checkboxanswer2.setImageResource(R.drawable.ok_mark);
+            checkboxanswer2.setVisibility(View.VISIBLE);
+            checkboxanswer3.setImageResource(R.drawable.ok_mark);
+            checkboxanswer3.setVisibility(View.VISIBLE);
+            checkboxanswer4.setImageResource(R.drawable.ok_mark);
+            checkboxanswer4.setVisibility(View.VISIBLE);
+            checkboxanswer5.setImageResource(R.drawable.ok_mark);
+            checkboxanswer5.setVisibility(View.VISIBLE);
+            checkboxanswer6.setImageResource(R.drawable.ok_mark);
+            checkboxanswer6.setVisibility(View.VISIBLE);
+            checkboxanswer7.setImageResource(R.drawable.ok_mark);
+            checkboxanswer7.setVisibility(View.VISIBLE);
+
+        }
+        else if(count == 8){
+            checkboxanswer1.setImageResource(R.drawable.ok_mark);
+            checkboxanswer1.setVisibility(View.VISIBLE);
+            checkboxanswer2.setImageResource(R.drawable.ok_mark);
+            checkboxanswer2.setVisibility(View.VISIBLE);
+            checkboxanswer3.setImageResource(R.drawable.ok_mark);
+            checkboxanswer3.setVisibility(View.VISIBLE);
+            checkboxanswer4.setImageResource(R.drawable.ok_mark);
+            checkboxanswer4.setVisibility(View.VISIBLE);
+            checkboxanswer5.setImageResource(R.drawable.ok_mark);
+            checkboxanswer5.setVisibility(View.VISIBLE);
+            checkboxanswer6.setImageResource(R.drawable.ok_mark);
+            checkboxanswer6.setVisibility(View.VISIBLE);
+            checkboxanswer7.setImageResource(R.drawable.ok_mark);
+            checkboxanswer7.setVisibility(View.VISIBLE);
+            checkboxanswer8.setImageResource(R.drawable.ok_mark);
+
+            //     greendot8.setVisibility(View.VISIBLE);
+
+        }
+
         else if(count == 9){
+            checkboxanswer9.setImageResource(R.drawable.ok_mark);
+            checkboxanswer9.setVisibility(View.VISIBLE);
+            //   greendot9.setVisibility(View.VISIBLE);
+
+        }
+        else if(count == 10){
             checkboxanswer10.setImageResource(R.drawable.ok_mark);
             checkboxanswer10.setVisibility(View.VISIBLE);
-            greendot10.setVisibility(View.VISIBLE);
+            // greendot10.setVisibility(View.VISIBLE);
 
         }
-        else if(count == 29){
-            checkboxanswer10.setImageResource(R.drawable.delete_mark);
-            checkboxanswer10.setVisibility(View.VISIBLE);
 
-        }
+    }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this,FinalmainScreen.class));
+        super.onBackPressed();
     }
 }

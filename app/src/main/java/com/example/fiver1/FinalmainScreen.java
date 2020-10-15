@@ -24,12 +24,17 @@ public class FinalmainScreen extends AppCompatActivity {
     }
 
     public void numberact(View view) {
-        startActivity(new Intent(FinalmainScreen.this,NumbersAct.class));
-
+        Intent ii= new Intent(FinalmainScreen.this,NumbersAct.class);
+        //ii.putExtra("Seq","numbers");
+        ii.putExtra("value",37);
+        startActivity(ii);
     }
 
     public void showemoact(View view) {
-        startActivity(new Intent(FinalmainScreen.this,EmoQuestionsActivity.class));
+        Intent ii= new Intent(FinalmainScreen.this, EmoQuestionsActivity.class);
+        //ii.putExtra("Seq","emo");
+        ii.putExtra("value",17);
+        startActivity(ii);
     }
 
     public void showgellery(View view) {
@@ -37,21 +42,30 @@ public class FinalmainScreen extends AppCompatActivity {
     }
 
     public void showcoloract(View view) {
-        startActivity(new Intent(FinalmainScreen.this,Colours_question_act.class));
-    }
+        Intent ii= new Intent(FinalmainScreen.this,Colours_question_act.class);
+        //ii.putExtra("Seq","colour");
+        ii.putExtra("value",12);
+        startActivity(ii);    }
 
     public void animalact(View view) {
-        startActivity(new Intent(FinalmainScreen.this,Animals_question.class));
-    }
+        Intent ii= new Intent(FinalmainScreen.this,Animals_question.class);
+        //ii.putExtra("Seq","animals");
+        ii.putExtra("value",99);
+        startActivity(ii);    }
 
     public void fruitsAct(View view) {
-        startActivity(new Intent(FinalmainScreen.this,FoodActivity.class));
+        Intent ii= new Intent(FinalmainScreen.this,FoodActivity.class);
+        // ii.putExtra("Seq","food");
+        ii.putExtra("value",32);
+        startActivity(ii);
 
     }
 
     public void travelAct(View view) {
-        startActivity(new Intent(FinalmainScreen.this,TravelAct.class));
-
+        Intent ii= new Intent(FinalmainScreen.this,TravelAct.class);
+        //ii.putExtra("Seq","transport");
+        ii.putExtra("value",72);
+        startActivity(ii);
     }
 
     @Override
