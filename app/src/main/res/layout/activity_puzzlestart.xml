@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Puzzlestart">
+
+    <com.example.fiver1.view.PuzzleView
+        android:id="@+id/puzzleView"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp" />
+
+    <com.example.fiver1.layout.PuzzleLayout
+        android:id="@+id/activity_swipe_card"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="400dp">
+
+    </com.example.fiver1.layout.PuzzleLayout>
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="251dp"
+        android:layout_height="137dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="1dp"
+        app:srcCompat="@drawable/birds" />
+
+</RelativeLayout>
