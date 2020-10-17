@@ -151,7 +151,7 @@ public class Colours_question_act extends AppCompatActivity {
     private void condition() {
 
         if (anscnt > 10) {
-            if(seq==1 || seq==2 || seq==3 || seq==4 ||seq==5 || seq==6|| seq==7){
+            if(seq==0 || seq==1 || seq==2 || seq==3 ||seq==4 || seq==5|| seq==6){
                 finish();}
             else {
                 Toast.makeText(getApplicationContext(),"Quiz is completed. Thankyou", Toast.LENGTH_LONG).show();

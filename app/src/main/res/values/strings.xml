@@ -6,5 +6,8 @@
     <string name="activity_main_empty_view_text">Create your first photo memory with the button below.</string>
     <string name="new_memory_btn_gallery">Add a photo from gallery</string>
     <string name="new_memory_btn_camera">Add a photo from camera</string>
+    <string name="TituloGanar">Congratulation</string>
+    <string name="DescGanar">You Solve all Puzzle</string>
+    <string name="OK">OK</string>
 
 </resources>

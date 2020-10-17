@@ -73,4 +73,8 @@ public class FinalmainScreen extends AppCompatActivity {
         finish();
         super.onBackPressed();
     }
+
+    public void puzzlemain(View view) {
+        startActivity(new Intent(FinalmainScreen.this,Puzzlemainscreen.class));
+    }
 }
