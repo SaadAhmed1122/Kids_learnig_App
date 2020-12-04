@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/colorful"
     android:layout_height="match_parent"
     tools:context=".FinalmainScreen">
 
@@ -11,9 +12,9 @@
         android:layout_width="84dp"
         android:layout_height="92dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="16dp"
         android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout4"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout6"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <ImageView
@@ -21,14 +22,14 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:onClick="travelAct"
-            app:srcCompat="@drawable/travel" />
+            app:srcCompat="@drawable/peace_and_love" />
 
         <TextView
             android:id="@+id/mtrl_picView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Transporti"
+            android:text="Transport"
             android:textColor="#D84315"
             android:textStyle="bold" />
     </LinearLayout>
@@ -48,15 +49,15 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:onClick="showcoloract"
-            app:srcCompat="@drawable/shapes" />
+            app:srcCompat="@drawable/nicubunu_game_marbles_shapes" />
 
         <TextView
             android:id="@+id/textVisew6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Forms"
-            android:textColor="#F9A825"
+            android:text="Shapes"
+            android:textColor="#D61369"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -67,7 +68,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="136dp"
         android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout6"
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutc4"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <ImageView
@@ -75,14 +76,14 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:onClick="numberact"
-            app:srcCompat="@drawable/numbers" />
+            app:srcCompat="@drawable/numbers_img" />
 
         <TextView
             android:id="@+id/textView6c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Numeri"
+            android:text="Numbers"
             android:textColor="#034B51"
             android:textStyle="bold" />
     </LinearLayout>
@@ -102,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:onClick="animalact"
-            app:srcCompat="@drawable/x4" />
+            app:srcCompat="@drawable/pixabella_green_valentine_frog_with_pink_hearts" />
 
         <TextView
             android:id="@+id/textViewcd6"
@@ -110,8 +111,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:onClick="animalact"
-            android:text="IMMAGINI"
-            android:textColor="#F9A825"
+            android:text="Animals"
+            android:textColor="#0E8C00"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -121,7 +122,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="28dp"
-        android:text="IMPOSTA UNA SEQUENZA DI ATTIVITA'"
+        android:text="SET UP A SEQUENCE OF ACTIVITIES'"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -143,7 +144,9 @@
         android:layout_width="77dp"
         android:layout_height="63dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/borders"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.824"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -156,7 +159,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="24dp"
-        android:text="SELEZIONA UNA ATTIVITA'"
+        android:text="SELECT AN ACTIVITY'"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -164,7 +167,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="wrap_content"
+        android:layout_width="84dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="49dp"
         android:layout_marginTop="16dp"
@@ -177,15 +180,15 @@
             android:layout_width="match_parent"
             android:onClick="showemoact"
             android:layout_height="70dp"
-            app:srcCompat="@drawable/iconssmile" />
+            app:srcCompat="@drawable/images_emot" />
 
         <TextView
             android:id="@+id/textViskew6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Emozioni"
-            android:textColor="#F9A825"
+            android:text="Emotions"
+            android:textColor="#1565C0"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -204,52 +207,53 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:onClick="fruitsAct"
-            app:srcCompat="@drawable/foodicon" />
+            app:srcCompat="@drawable/gerald_g_fast_food_lunch_dinner_ff_menu_1" />
 
         <TextView
             android:id="@+id/textkView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Cibo"
-            android:textColor="#AD1457"
+            android:text="Food"
+            android:textColor="#FF8F00"
             android:textStyle="bold" />
     </LinearLayout>
 
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLoayout7"-->
+<!--        android:layout_width="84dp"-->
+<!--        android:layout_height="92dp"-->
+<!--        android:layout_marginStart="40dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/linearLayout6"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView5">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imacdgeView5"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:onClick="showcoloract"-->
+<!--            app:srcCompat="@drawable/coloricon" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textveView6"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Colori"-->
+<!--            android:textColor="#034B51"-->
+<!--            android:textStyle="bold" />-->
+<!--    </LinearLayout>-->
+
     <LinearLayout
-        android:id="@+id/linearLoayout7"
+        android:id="@+id/linearLayout10"
         android:layout_width="84dp"
         android:layout_height="92dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
         android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout6"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
-
-        <ImageView
-            android:id="@+id/imacdgeView5"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:onClick="showcoloract"
-            app:srcCompat="@drawable/coloricon" />
-
-        <TextView
-            android:id="@+id/textveView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Colori"
-            android:textColor="#034B51"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="84dp"
-        android:layout_height="92dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout7"
+        app:layout_constraintStart_toEndOf="@+id/linearpLayout6"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <ImageView
@@ -257,7 +261,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:onClick="puzzlemain"
-            app:srcCompat="@drawable/puzzleicon" />
+            app:srcCompat="@drawable/piezarompecabezas" />
 
         <TextView
             android:id="@+id/textView6"
@@ -265,9 +269,39 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Puzzle"
-            android:textColor="#0B8F9A"
+            android:textColor="#AF9E04"
             android:textStyle="bold" />
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="84dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:orientation="vertical"
+        android:onClick="showthings"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout8"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
+
+        <ImageView
+            android:id="@+id/imageView51"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+
+            app:srcCompat="@drawable/headphone" />
+
+        <TextView
+            android:id="@+id/textView61"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Things"
+            android:textColor="#505554"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
 
     <ImageView
         android:id="@+id/imageView6"
@@ -276,10 +310,10 @@
         android:layout_marginTop="72dp"
         android:onClick="showgellery"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.821"
+        app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toEndOf="@+id/linearLayout8"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:srcCompat="@drawable/agenda" />
+        app:srcCompat="@drawable/sheikh_tuhin_gallery_icon" />
 
     <TextView
         android:id="@+id/textView7"
@@ -287,7 +321,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="20dp"
-        android:text="ICONICA AGENDA"
+        android:text="ICONIC AGENDA"
         android:textColor="#91B7E3"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -299,13 +333,24 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="Versione Completa"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
+        android:text="Complete version"
         android:textColor="#D52A2A"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="67dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="13dp"
+        android:onClick="stopmusic"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/soundoff" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

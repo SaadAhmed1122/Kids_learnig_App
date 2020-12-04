@@ -19,9 +19,8 @@ public class EmoQuestionsActivity extends AppCompatActivity {
     private static final String TAG = "GETB";
     int mCurrentIndex=-1;
     int[] questions;
-    int[][] answers;
     int seq;
-    String sequence;
+    int[][] answers;
     int[] wrong_questions;
     View greendot1,greendot2,greendot3,greendot4,greendot5,greendot6,greendot7,greendot8,greendot9,greendot10;
 
@@ -32,7 +31,7 @@ public class EmoQuestionsActivity extends AppCompatActivity {
     int numberofquestioncomplete = 0;
     LinearLayout linearLayoutop1,linearLayoutop2,linearLayoutop3;
     int answerlog[] = new int[10];
-    int anscnt = 1,wrong_ans_count=0;
+    int anscnt = 0,wrong_ans_count=0;
     TextView scorcetxt;
     int correct_ans_count=0;
     int correct_answer[] = new int[10];
@@ -114,15 +113,19 @@ public class EmoQuestionsActivity extends AppCompatActivity {
         queue = random_number_generator();
         displayquestion();
 
-        scorcetxt.setText(questions[queue[numberofquestioncomplete-1]]);
+        // scorcetxt.setText(questions[queue[numberofquestioncomplete-1]]);
+
+
+        seq = getIntent().getIntExtra("value",0);
         if(seq==1 || seq==2 || seq==3 || seq==4 ||seq==5 || seq==6|| seq==7){
             show_mark(seq);
         }
+//                    scorcetxt.setText(questions[queue[numberofquestioncomplete-1]]);
 
     }
     public void displayquestion () {
         if(anscnt < 10) {
-          //  TextView ques = (TextView) findViewById(R.id.lbl_question);
+            //  TextView ques = (TextView) findViewById(R.id.lbl_question);
             ImageView opt1 = (ImageView) findViewById(R.id.image1x);
             ImageView opt2 = (ImageView) findViewById(R.id.imagce2);
             ImageView opt3 = (ImageView) findViewById(R.id.imagne3);
@@ -133,7 +136,7 @@ public class EmoQuestionsActivity extends AppCompatActivity {
             opt1.setImageResource(answers[queue[numberofquestioncomplete]][0]);
             opt2.setImageResource(answers[queue[numberofquestioncomplete]][1]);
             opt3.setImageResource(answers[queue[numberofquestioncomplete]][2]);
-           // opt4.setImageResource(answers[queue[numberofquestioncomplete]][3]);
+            // opt4.setImageResource(answers[queue[numberofquestioncomplete]][3]);
 
             linearLayoutop1.setVisibility(View.VISIBLE);
             linearLayoutop2.setVisibility(View.VISIBLE);
@@ -142,21 +145,23 @@ public class EmoQuestionsActivity extends AppCompatActivity {
             //counter for number of completed queation
             numberofquestioncomplete++;
             mCurrentIndex++;
+
         }
     }
 
     // on every selection of option this method is called
     public void onClickCard(View view) {
-       condition();
+        condition();
     }
 
     private void condition() {
-        if (anscnt > 10) {
+
+        if (anscnt >= 10) {
             if(seq==0 || seq==1 || seq==2 || seq==3 ||seq==4 || seq==5|| seq==6){
-                finish();}
+                finish();
+            }
             else {
                 Toast.makeText(getApplicationContext(),"Quiz is completed. Thankyou", Toast.LENGTH_LONG).show();
-
                 //  scorcetxt.setText("Your_Score_is_:"+correct_ans_count+"Wrong :"+wrong_ans_count);
 
                 // showwronglist();
@@ -165,42 +170,47 @@ public class EmoQuestionsActivity extends AppCompatActivity {
                 // here i just want to pass array to next activity
                 // Intent intd = new Intent(getApplicationContext(), ScoringPage.class);
                 //intd.putExtra("user_name",user_name);
-                i.putExtra("Wrong", Integer.toString(wrong_ans_count));
+                i.putExtra("Wrong", wrong_ans_count);
                 startActivity(i);
                 finish();
             }
         }
 
+        else {
+            ImageView opt1 = (ImageView) findViewById(R.id.image1x);
+            ImageView opt2 = (ImageView) findViewById(R.id.imagce2);
+            ImageView opt3 = (ImageView) findViewById(R.id.imagne3);
+            // ImageButton opt4 = (ImageButton) findViewById(R.id.option4);
 
-        ImageView opt1 = (ImageView) findViewById(R.id.image1x);
-        ImageView opt2 = (ImageView) findViewById(R.id.imagce2);
-        ImageView opt3 = (ImageView) findViewById(R.id.imagne3);
-        // ImageButton opt4 = (ImageButton) findViewById(R.id.option4);
 
+            //if (anscnt < 10 ) {
 
-        if (anscnt <= 10 ) {
-
-            if (opt1.isPressed() == true) {
+            if (opt1.isPressed()) {
                 if ((correct_answer[queue[numberofquestioncomplete - 1]] == 0)) {
                     correct_ans_count++;
-                   // Toast.makeText(this, "Your Answer is true", Toast.LENGTH_SHORT).show();
-                    scorcetxt.setText("Your Score is :" + correct_ans_count);
-                   // show_mark(mCurrentIndex);
-                    showgreen(mCurrentIndex);
-                    displayquestion();
-                    anscnt++;
+                    if(mCurrentIndex == 9){
+                        Intent i = new Intent(this,ScoringPage.class);
+                        i.putExtra("Wrong", wrong_ans_count);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        showgreen(mCurrentIndex);
+                        displayquestion();
+                        anscnt++;}
                 } else {
-                        Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
-                        wrong_ans_count++;
-                        linearLayoutop1.setVisibility(View.GONE);
-                       // int a = questions[queue[numberofquestioncomplete - 1]];
-                        //int c=queue[numberofquestioncomplete - 1];
-                        //int b =correct_answer[queue[numberofquestioncomplete - 1]];
-                        //if(!(correct_answer[queue[n
-                        // umberofquestioncomplete - 1]] == 1)){
-                       // displayquestion_another(a,c,b,0);
-                        //}
-                        //Toast.makeText(this, ""+b, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
+                    wrong_ans_count++;
+                    linearLayoutop1.setVisibility(View.GONE);
+
+                    // int a = questions[queue[numberofquestioncomplete - 1]];
+                    //int c=queue[numberofquestioncomplete - 1];
+                    //int b =correct_answer[queue[numberofquestioncomplete - 1]];
+                    //if(!(correct_answer[queue[n
+                    // umberofquestioncomplete - 1]] == 1)){
+                    // displayquestion_another(a,c,b,0);
+                    //}
+                    //Toast.makeText(this, ""+b, Toast.LENGTH_SHORT).show();
 
                     //  linearLayoutop1.setVisibility(View.GONE);
 
@@ -213,64 +223,58 @@ public class EmoQuestionsActivity extends AppCompatActivity {
                     //  wrong_questions[wrong_question_counter] = a;
                     // wrong_question_counter++;
                 }
-                 //ans
+                //ans
             }
-            if (opt2.isPressed() == true) {
+            if (opt2.isPressed()) {
                 if ((correct_answer[queue[numberofquestioncomplete - 1]] == 1)) {
                     correct_ans_count++;
                     //Toast.makeText(this,"Your Answer is true", Toast.LENGTH_SHORT).show();
-                    scorcetxt.setText("Your Score is :" + correct_ans_count);
+                    //scorcetxt.setText("Your Score is :" + correct_ans_count);
                     //show_mark(mCurrentIndex);
-                    showgreen(mCurrentIndex);
-                    displayquestion();
-                    anscnt++;
+                    if(mCurrentIndex == 9){
+                        Intent i = new Intent(this,ScoringPage.class);
+                        i.putExtra("Wrong", wrong_ans_count);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        showgreen(mCurrentIndex);
+                        displayquestion();
+                        anscnt++;}
                 } else {
-                        Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
-                        linearLayoutop2.setVisibility(View.GONE);
-                        wrong_ans_count++;
-                     //   int a = questions[queue[numberofquestioncomplete - 1]];
-                       // int c=queue[numberofquestioncomplete - 1];
-                        //int b =correct_answer[queue[numberofquestioncomplete - 1]];
-                      //  displayquestion_another(a,c,b,1);
+                    Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
+                    linearLayoutop2.setVisibility(View.GONE);
+                    wrong_ans_count++;
 
-                     //wrong_questions[wrong_question_counter] = a;
-                   // wrong_question_counter++;
-                    //wrong_ans_count++;
                 }
-                //anscnt++;
             }
-            if (opt3.isPressed() == true) {
+            if (opt3.isPressed()) {
                 if (correct_answer[queue[numberofquestioncomplete - 1]] == 2) {
                     correct_ans_count++;
-                    //Toast.makeText(this, "Your Answer is true", Toast.LENGTH_SHORT).show();
-                    scorcetxt.setText("Your Score is :" + correct_ans_count);
-                    //show_mark(mCurrentIndex);
-                    showgreen(mCurrentIndex);
-                    displayquestion();
-                    anscnt++;
+                    if(mCurrentIndex == 9){
+                        Intent i = new Intent(this,ScoringPage.class);
+                        i.putExtra("Wrong", wrong_ans_count);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        showgreen(mCurrentIndex);
+                        displayquestion();
+                        anscnt++;
+                    }
                 } else {
-                        Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
-                        wrong_ans_count++;
-                        linearLayoutop3.setVisibility(View.GONE);
-                      //  int a = questions[queue[numberofquestioncomplete - 1]];
-                       // int c=queue[numberofquestioncomplete - 1];
-                        //int b =correct_answer[queue[numberofquestioncomplete - 1]];
-                        //displayquestion_another(a,c,b,2);
-
-                    //  wrong_questions[wrong_question_counter] = a;
-                    // wrong_question_counter++;
-                    //wrong_ans_count++;
-                    //
+                    Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
+                    wrong_ans_count++;
+                    linearLayoutop3.setVisibility(View.GONE);
                 }
-                // anscnt++;
-            }
-            if (anscnt <= 10) {
-                //   displayquestion();
-            }
+            }}
+        if (anscnt <= 10) {
+            //   displayquestion();
         }
+        //}
     }
 
-//    private void displayquestion_another(int a,int b,int c,int d) {
+    //    private void displayquestion_another(int a,int b,int c,int d) {
 //        if (anscnt < 10) {
 //            //  TextView ques = (TextView) findViewById(R.id.lbl_question);
 //            ImageView opt1 = (ImageView) findViewById(R.id.image1x);
@@ -325,30 +329,30 @@ public class EmoQuestionsActivity extends AppCompatActivity {
 ////            Toast.makeText(this, ""+wrong_questions[i], Toast.LENGTH_SHORT).show();
 ////        }
 //    }
-private void setupview() {
-    checkboxanswer1= (ImageView) findViewById(R.id.crossimg1);
-    checkboxanswer2= (ImageView) findViewById(R.id.crossimg2);
-    checkboxanswer3= (ImageView) findViewById(R.id.crossimg3);
-    checkboxanswer4= (ImageView) findViewById(R.id.crossimg4);
-    checkboxanswer5= (ImageView) findViewById(R.id.crossimg5);
-    checkboxanswer6= (ImageView) findViewById(R.id.crossimg6);
-    checkboxanswer7= (ImageView) findViewById(R.id.crossimg7);
-    checkboxanswer8= (ImageView) findViewById(R.id.crossimg8);
-    checkboxanswer9= (ImageView) findViewById(R.id.crossimg9);
-    checkboxanswer10= (ImageView) findViewById(R.id.crossimg10);
+    private void setupview() {
+        checkboxanswer1= (ImageView) findViewById(R.id.crossimg1);
+        checkboxanswer2= (ImageView) findViewById(R.id.crossimg2);
+        checkboxanswer3= (ImageView) findViewById(R.id.crossimg3);
+        checkboxanswer4= (ImageView) findViewById(R.id.crossimg4);
+        checkboxanswer5= (ImageView) findViewById(R.id.crossimg5);
+        checkboxanswer6= (ImageView) findViewById(R.id.crossimg6);
+        checkboxanswer7= (ImageView) findViewById(R.id.crossimg7);
+        checkboxanswer8= (ImageView) findViewById(R.id.crossimg8);
+        checkboxanswer9= (ImageView) findViewById(R.id.crossimg9);
+        checkboxanswer10= (ImageView) findViewById(R.id.crossimg10);
 
-    greendot1 = (View) findViewById(R.id.grenc1);
-    greendot2 = (View) findViewById(R.id.grenc2);
-    greendot3 = (View) findViewById(R.id.grenc3);
-    greendot4 = (View) findViewById(R.id.grenc4);
-    greendot5 = (View) findViewById(R.id.grenc5);
-    greendot6 = (View) findViewById(R.id.grenc6);
-    greendot7 = (View) findViewById(R.id.grenc7);
-    greendot8 = (View) findViewById(R.id.grenc8);
-    greendot9 = (View) findViewById(R.id.grenc9);
-    greendot10 = (View) findViewById(R.id.grenc10);
-}
-private void setgrendot() {
+        greendot1 = (View) findViewById(R.id.grenc1);
+        greendot2 = (View) findViewById(R.id.grenc2);
+        greendot3 = (View) findViewById(R.id.grenc3);
+        greendot4 = (View) findViewById(R.id.grenc4);
+        greendot5 = (View) findViewById(R.id.grenc5);
+        greendot6 = (View) findViewById(R.id.grenc6);
+        greendot7 = (View) findViewById(R.id.grenc7);
+        greendot8 = (View) findViewById(R.id.grenc8);
+        greendot9 = (View) findViewById(R.id.grenc9);
+        greendot10 = (View) findViewById(R.id.grenc10);
+    }
+    private void setgrendot() {
         greendot1.setVisibility(View.INVISIBLE);
         greendot2.setVisibility(View.INVISIBLE);
         greendot3.setVisibility(View.INVISIBLE);
@@ -406,7 +410,7 @@ private void setgrendot() {
         if(count==1){
             checkboxanswer1.setImageResource(R.drawable.ok_mark);
             checkboxanswer1.setVisibility(View.VISIBLE);
-           // greendot1.setVisibility(View.VISIBLE);
+            // greendot1.setVisibility(View.VISIBLE);
         }
         if(count == 2){
             checkboxanswer1.setImageResource(R.drawable.ok_mark);
@@ -498,28 +502,29 @@ private void setgrendot() {
             checkboxanswer7.setVisibility(View.VISIBLE);
             checkboxanswer8.setImageResource(R.drawable.ok_mark);
 
-       //     greendot8.setVisibility(View.VISIBLE);
+            //     greendot8.setVisibility(View.VISIBLE);
 
         }
 
         else if(count == 9){
             checkboxanswer9.setImageResource(R.drawable.ok_mark);
             checkboxanswer9.setVisibility(View.VISIBLE);
-         //   greendot9.setVisibility(View.VISIBLE);
+            //   greendot9.setVisibility(View.VISIBLE);
 
         }
         else if(count == 10){
             checkboxanswer10.setImageResource(R.drawable.ok_mark);
             checkboxanswer10.setVisibility(View.VISIBLE);
-           // greendot10.setVisibility(View.VISIBLE);
+            // greendot10.setVisibility(View.VISIBLE);
 
         }
 
     }
+
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(this,FinalmainScreen.class));
+        startActivity(new Intent(this, FinalmainScreen.class));
         super.onBackPressed();
+        finish();
     }
-
 }

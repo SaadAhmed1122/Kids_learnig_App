@@ -19,6 +19,7 @@ public class NumbersAct extends AppCompatActivity {
     private static final String TAG = "GETB";
     int mCurrentIndex=-1;
     int[] questions;
+    int seq;
     int[][] answers;
     int[] wrong_questions;
     View greendot1,greendot2,greendot3,greendot4,greendot5,greendot6,greendot7,greendot8,greendot9,greendot10;
@@ -30,9 +31,8 @@ public class NumbersAct extends AppCompatActivity {
     int numberofquestioncomplete = 0;
     LinearLayout linearLayoutop1,linearLayoutop2,linearLayoutop3;
     int answerlog[] = new int[10];
-    int anscnt = 1,wrong_ans_count=0;
+    int anscnt = 0,wrong_ans_count=0;
     TextView scorcetxt;
-    int seq;
     int correct_ans_count=0;
     int correct_answer[] = new int[10];
 //    String user_name;
@@ -51,6 +51,7 @@ public class NumbersAct extends AppCompatActivity {
         //final question list is return
         return question_list;
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +97,7 @@ public class NumbersAct extends AppCompatActivity {
         // 0 1 2
         correct_answer[0] =0;
         correct_answer[1] =2;
-        correct_answer[2] =2;
+        correct_answer[2] =1;
         correct_answer[3] =0;
         correct_answer[4] =0;
         correct_answer[5] =0;
@@ -108,9 +109,11 @@ public class NumbersAct extends AppCompatActivity {
         queue = random_number_generator();
         displayquestion();
 
-     //   scorcetxt.setText(questions[queue[numberofquestioncomplete-1]]);
+        scorcetxt.setText(questions[queue[numberofquestioncomplete-1]]);
+
+
         seq = getIntent().getIntExtra("value",0);
-        if(seq==0 || seq==1 || seq==2 || seq==3 ||seq==4 || seq==5|| seq==6){
+        if(seq==1 || seq==2 || seq==3 || seq==4 ||seq==5 || seq==6|| seq==7){
             show_mark(seq);
         }
 //                    scorcetxt.setText(questions[queue[numberofquestioncomplete-1]]);
@@ -138,6 +141,7 @@ public class NumbersAct extends AppCompatActivity {
             //counter for number of completed queation
             numberofquestioncomplete++;
             mCurrentIndex++;
+
         }
     }
 
@@ -148,12 +152,12 @@ public class NumbersAct extends AppCompatActivity {
 
     private void condition() {
 
-        if (anscnt > 10) {
-            if(seq==1 || seq==2 || seq==3 || seq==4 ||seq==5 || seq==6|| seq==7){
-                finish();}
+        if (anscnt >= 10) {
+            if(seq==0 || seq==1 || seq==2 || seq==3 ||seq==4 || seq==5|| seq==6){
+                finish();
+            }
             else {
                 Toast.makeText(getApplicationContext(),"Quiz is completed. Thankyou", Toast.LENGTH_LONG).show();
-
                 //  scorcetxt.setText("Your_Score_is_:"+correct_ans_count+"Wrong :"+wrong_ans_count);
 
                 // showwronglist();
@@ -162,33 +166,39 @@ public class NumbersAct extends AppCompatActivity {
                 // here i just want to pass array to next activity
                 // Intent intd = new Intent(getApplicationContext(), ScoringPage.class);
                 //intd.putExtra("user_name",user_name);
-                i.putExtra("Wrong", Integer.toString(wrong_ans_count));
+                i.putExtra("Wrong", wrong_ans_count);
                 startActivity(i);
                 finish();
             }
         }
 
-        ImageView opt1 = (ImageView) findViewById(R.id.image1x);
-        ImageView opt2 = (ImageView) findViewById(R.id.imagce2);
-        ImageView opt3 = (ImageView) findViewById(R.id.imagne3);
-        // ImageButton opt4 = (ImageButton) findViewById(R.id.option4);
+        else {
+            ImageView opt1 = (ImageView) findViewById(R.id.image1x);
+            ImageView opt2 = (ImageView) findViewById(R.id.imagce2);
+            ImageView opt3 = (ImageView) findViewById(R.id.imagne3);
+            // ImageButton opt4 = (ImageButton) findViewById(R.id.option4);
 
 
-        if (anscnt <= 10 ) {
+            //if (anscnt < 10 ) {
 
-            if (opt1.isPressed() == true) {
+            if (opt1.isPressed()) {
                 if ((correct_answer[queue[numberofquestioncomplete - 1]] == 0)) {
                     correct_ans_count++;
-                    // Toast.makeText(this, "Your Answer is true", Toast.LENGTH_SHORT).show();
-                    scorcetxt.setText("Your Score is :" + correct_ans_count);
-                    // show_mark(mCurrentIndex);
-                    showgreen(mCurrentIndex);
-                    displayquestion();
-                    anscnt++;
+                    if(mCurrentIndex == 9){
+                        Intent i = new Intent(this,ScoringPage.class);
+                        i.putExtra("Wrong", wrong_ans_count);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        showgreen(mCurrentIndex);
+                        displayquestion();
+                        anscnt++;}
                 } else {
                     Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
                     wrong_ans_count++;
                     linearLayoutop1.setVisibility(View.GONE);
+
                     // int a = questions[queue[numberofquestioncomplete - 1]];
                     //int c=queue[numberofquestioncomplete - 1];
                     //int b =correct_answer[queue[numberofquestioncomplete - 1]];
@@ -211,59 +221,53 @@ public class NumbersAct extends AppCompatActivity {
                 }
                 //ans
             }
-            if (opt2.isPressed() == true) {
+            if (opt2.isPressed()) {
                 if ((correct_answer[queue[numberofquestioncomplete - 1]] == 1)) {
                     correct_ans_count++;
                     //Toast.makeText(this,"Your Answer is true", Toast.LENGTH_SHORT).show();
-                    scorcetxt.setText("Your Score is :" + correct_ans_count);
+                    //scorcetxt.setText("Your Score is :" + correct_ans_count);
                     //show_mark(mCurrentIndex);
-                    showgreen(mCurrentIndex);
-                    displayquestion();
-                    anscnt++;
+                    if(mCurrentIndex == 9){
+                        Intent i = new Intent(this,ScoringPage.class);
+                        i.putExtra("Wrong", wrong_ans_count);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        showgreen(mCurrentIndex);
+                        displayquestion();
+                        anscnt++;}
                 } else {
                     Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
                     linearLayoutop2.setVisibility(View.GONE);
                     wrong_ans_count++;
-                    //   int a = questions[queue[numberofquestioncomplete - 1]];
-                    // int c=queue[numberofquestioncomplete - 1];
-                    //int b =correct_answer[queue[numberofquestioncomplete - 1]];
-                    //  displayquestion_another(a,c,b,1);
 
-                    //wrong_questions[wrong_question_counter] = a;
-                    // wrong_question_counter++;
-                    //wrong_ans_count++;
                 }
-                //anscnt++;
             }
-            if (opt3.isPressed() == true) {
+            if (opt3.isPressed()) {
                 if (correct_answer[queue[numberofquestioncomplete - 1]] == 2) {
                     correct_ans_count++;
-                    //Toast.makeText(this, "Your Answer is true", Toast.LENGTH_SHORT).show();
-                    scorcetxt.setText("Your Score is :" + correct_ans_count);
-                    //show_mark(mCurrentIndex);
-                    showgreen(mCurrentIndex);
-                    displayquestion();
-                    anscnt++;
+                    if(mCurrentIndex == 9){
+                        Intent i = new Intent(this,ScoringPage.class);
+                        i.putExtra("Wrong", wrong_ans_count);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        showgreen(mCurrentIndex);
+                        displayquestion();
+                        anscnt++;
+                    }
                 } else {
                     Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
                     wrong_ans_count++;
                     linearLayoutop3.setVisibility(View.GONE);
-                    //  int a = questions[queue[numberofquestioncomplete - 1]];
-                    // int c=queue[numberofquestioncomplete - 1];
-                    //int b =correct_answer[queue[numberofquestioncomplete - 1]];
-                    //displayquestion_another(a,c,b,2);
-
-                    //  wrong_questions[wrong_question_counter] = a;
-                    // wrong_question_counter++;
-                    //wrong_ans_count++;
-                    //
                 }
-                // anscnt++;
-            }
-            if (anscnt <= 10) {
-                //   displayquestion();
-            }
+            }}
+        if (anscnt <= 10) {
+            //   displayquestion();
         }
+        //}
     }
 
     //    private void displayquestion_another(int a,int b,int c,int d) {
@@ -512,9 +516,11 @@ public class NumbersAct extends AppCompatActivity {
         }
 
     }
+
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(this,FinalmainScreen.class));
+        startActivity(new Intent(this, FinalmainScreen.class));
         super.onBackPressed();
+        finish();
     }
 }

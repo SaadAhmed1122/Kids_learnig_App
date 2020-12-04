@@ -13,7 +13,17 @@
         android:roundIcon="@drawable/kuto"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Puzzlestart"></activity>
+        <activity android:name=".SplashScreen" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Vehicals_Act"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Puzzlestart" />
         <activity
             android:name=".Puzzlemainscreen"
             android:screenOrientation="portrait" />
@@ -35,11 +45,7 @@
         <activity
             android:name=".FinalmainScreen"
             android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Colours_question_act"

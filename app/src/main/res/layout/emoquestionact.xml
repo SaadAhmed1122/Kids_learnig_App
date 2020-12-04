@@ -10,6 +10,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAlignment="center"
@@ -19,8 +20,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
             android:layout_margin="2dp"
             android:background="@drawable/borders">
 
@@ -34,8 +35,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
             android:layout_margin="2dp"
             android:background="@drawable/borders">
 
@@ -50,8 +51,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
             android:layout_margin="2dp"
             android:background="@drawable/borders">
 
@@ -66,8 +67,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
             android:layout_margin="2dp"
             android:background="@drawable/borders">
 
@@ -82,8 +83,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
             android:layout_margin="2dp"
             android:background="@drawable/borders">
 
@@ -98,8 +99,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
             android:layout_margin="2dp"
             android:background="@drawable/borders">
 
@@ -114,8 +115,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
             android:layout_margin="2dp"
             android:background="@drawable/borders">
 
@@ -130,8 +131,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
             android:layout_margin="2dp"
             android:background="@drawable/borders">
 
@@ -146,8 +147,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
             android:layout_margin="2dp"
             android:background="@drawable/borders">
 
@@ -163,8 +164,8 @@
 
 
         <LinearLayout
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
             android:layout_margin="2dp"
             android:background="@drawable/borders">
 
@@ -212,7 +213,7 @@
         android:id="@+id/linearLayout_opt1"
         android:layout_width="100dp"
         android:layout_height="82dp"
-        android:layout_marginStart="130dp"
+        android:layout_marginStart="127dp"
         android:layout_marginBottom="18dp"
 
         android:background="@drawable/borders"
@@ -237,13 +238,13 @@
 
     <ImageView
         android:id="@+id/mainsimg"
-        android:layout_width="357dp"
+        android:layout_width="340dp"
 
-        android:layout_height="182dp"
+        android:layout_height="172dp"
         android:layout_marginStart="184dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="72dp"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
-        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/w3" />
@@ -298,8 +299,8 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <LinearLayout
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_margin="3dp"
             android:background="@drawable/questioncircle">
 
@@ -314,8 +315,8 @@
 
 
         <LinearLayout
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_margin="3dp"
             android:background="@drawable/questioncircle">
 
@@ -329,8 +330,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_margin="3dp"
             android:background="@drawable/questioncircle">
 
@@ -342,8 +343,8 @@
 
         </LinearLayout>
         <LinearLayout
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_margin="3dp"
             android:background="@drawable/questioncircle">
 
@@ -355,8 +356,8 @@
 
         </LinearLayout>
         <LinearLayout
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_margin="3dp"
             android:background="@drawable/questioncircle">
 
@@ -368,8 +369,8 @@
                 android:background="@drawable/circle" />
 
         </LinearLayout>    <LinearLayout
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_margin="3dp"
         android:background="@drawable/questioncircle">
 
@@ -382,8 +383,8 @@
     </LinearLayout>
 
         <LinearLayout
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_margin="3dp"
             android:background="@drawable/questioncircle">
 
@@ -394,8 +395,8 @@
                 android:background="@drawable/circle" />
 
         </LinearLayout> <LinearLayout
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_margin="3dp"
         android:background="@drawable/questioncircle">
 
@@ -406,8 +407,8 @@
             android:background="@drawable/circle" />
 
     </LinearLayout> <LinearLayout
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_margin="3dp"
         android:background="@drawable/questioncircle">
 
@@ -418,8 +419,8 @@
             android:background="@drawable/circle" />
 
     </LinearLayout> <LinearLayout
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_margin="3dp"
         android:background="@drawable/questioncircle">
 

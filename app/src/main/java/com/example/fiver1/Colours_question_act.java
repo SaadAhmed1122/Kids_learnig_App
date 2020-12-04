@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Colours_question_act extends AppCompatActivity {
-
     private static final String TAG = "GETB";
     int mCurrentIndex=-1;
     int[] questions;
@@ -32,7 +31,7 @@ public class Colours_question_act extends AppCompatActivity {
     int numberofquestioncomplete = 0;
     LinearLayout linearLayoutop1,linearLayoutop2,linearLayoutop3;
     int answerlog[] = new int[10];
-    int anscnt = 1,wrong_ans_count=0;
+    int anscnt = 0,wrong_ans_count=0;
     TextView scorcetxt;
     int correct_ans_count=0;
     int correct_answer[] = new int[10];
@@ -71,14 +70,14 @@ public class Colours_question_act extends AppCompatActivity {
 
         //  Log.d("user_name", user_name);
         //question array is assigned with values
-        questions= new int[]{R.drawable.i0,
-                R.drawable.i1,
-                R.drawable.i2, R.drawable.i3, R.drawable.i10,
-                R.drawable.i11,
-                R.drawable.i12,
-                R.drawable.i20,
-                R.drawable.i21,
-                R.drawable.i22};
+        questions= new int[]{R.drawable.h0,
+                R.drawable.h1,
+                R.drawable.h2, R.drawable.h3, R.drawable.h10,
+                R.drawable.h11,
+                R.drawable.h12,
+                R.drawable.h20,
+                R.drawable.h21,
+                R.drawable.h22};
 
         //answer array is asigned with options to be given and last index is of correct answer
 
@@ -109,13 +108,14 @@ public class Colours_question_act extends AppCompatActivity {
         queue = random_number_generator();
         displayquestion();
 
-        scorcetxt.setText(questions[queue[numberofquestioncomplete-1]]);
+        // scorcetxt.setText(questions[queue[numberofquestioncomplete-1]]);
 
 
         seq = getIntent().getIntExtra("value",0);
         if(seq==1 || seq==2 || seq==3 || seq==4 ||seq==5 || seq==6|| seq==7){
             show_mark(seq);
         }
+//                    scorcetxt.setText(questions[queue[numberofquestioncomplete-1]]);
 
     }
     public void displayquestion () {
@@ -140,6 +140,7 @@ public class Colours_question_act extends AppCompatActivity {
             //counter for number of completed queation
             numberofquestioncomplete++;
             mCurrentIndex++;
+
         }
     }
 
@@ -150,12 +151,12 @@ public class Colours_question_act extends AppCompatActivity {
 
     private void condition() {
 
-        if (anscnt > 10) {
+        if (anscnt >= 10) {
             if(seq==0 || seq==1 || seq==2 || seq==3 ||seq==4 || seq==5|| seq==6){
-                finish();}
+                finish();
+            }
             else {
                 Toast.makeText(getApplicationContext(),"Quiz is completed. Thankyou", Toast.LENGTH_LONG).show();
-
                 //  scorcetxt.setText("Your_Score_is_:"+correct_ans_count+"Wrong :"+wrong_ans_count);
 
                 // showwronglist();
@@ -164,34 +165,39 @@ public class Colours_question_act extends AppCompatActivity {
                 // here i just want to pass array to next activity
                 // Intent intd = new Intent(getApplicationContext(), ScoringPage.class);
                 //intd.putExtra("user_name",user_name);
-                i.putExtra("Wrong", Integer.toString(wrong_ans_count));
+                i.putExtra("Wrong", wrong_ans_count);
                 startActivity(i);
                 finish();
             }
         }
 
+        else {
+            ImageView opt1 = (ImageView) findViewById(R.id.image1x);
+            ImageView opt2 = (ImageView) findViewById(R.id.imagce2);
+            ImageView opt3 = (ImageView) findViewById(R.id.imagne3);
+            // ImageButton opt4 = (ImageButton) findViewById(R.id.option4);
 
-        ImageView opt1 = (ImageView) findViewById(R.id.image1x);
-        ImageView opt2 = (ImageView) findViewById(R.id.imagce2);
-        ImageView opt3 = (ImageView) findViewById(R.id.imagne3);
-        // ImageButton opt4 = (ImageButton) findViewById(R.id.option4);
 
+            //if (anscnt < 10 ) {
 
-        if (anscnt <= 10 ) {
-
-            if (opt1.isPressed() == true) {
+            if (opt1.isPressed()) {
                 if ((correct_answer[queue[numberofquestioncomplete - 1]] == 0)) {
                     correct_ans_count++;
-                    // Toast.makeText(this, "Your Answer is true", Toast.LENGTH_SHORT).show();
-                    scorcetxt.setText("Your Score is :" + correct_ans_count);
-                    // show_mark(mCurrentIndex);
-                    showgreen(mCurrentIndex);
-                    displayquestion();
-                    anscnt++;
+                    if(mCurrentIndex == 9){
+                        Intent i = new Intent(this,ScoringPage.class);
+                        i.putExtra("Wrong", wrong_ans_count);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        showgreen(mCurrentIndex);
+                        displayquestion();
+                        anscnt++;}
                 } else {
                     Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
                     wrong_ans_count++;
                     linearLayoutop1.setVisibility(View.GONE);
+
                     // int a = questions[queue[numberofquestioncomplete - 1]];
                     //int c=queue[numberofquestioncomplete - 1];
                     //int b =correct_answer[queue[numberofquestioncomplete - 1]];
@@ -214,59 +220,53 @@ public class Colours_question_act extends AppCompatActivity {
                 }
                 //ans
             }
-            if (opt2.isPressed() == true) {
+            if (opt2.isPressed()) {
                 if ((correct_answer[queue[numberofquestioncomplete - 1]] == 1)) {
                     correct_ans_count++;
                     //Toast.makeText(this,"Your Answer is true", Toast.LENGTH_SHORT).show();
-                    scorcetxt.setText("Your Score is :" + correct_ans_count);
+                    //scorcetxt.setText("Your Score is :" + correct_ans_count);
                     //show_mark(mCurrentIndex);
-                    showgreen(mCurrentIndex);
-                    displayquestion();
-                    anscnt++;
+                    if(mCurrentIndex == 9){
+                        Intent i = new Intent(this,ScoringPage.class);
+                        i.putExtra("Wrong", wrong_ans_count);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        showgreen(mCurrentIndex);
+                        displayquestion();
+                        anscnt++;}
                 } else {
                     Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
                     linearLayoutop2.setVisibility(View.GONE);
                     wrong_ans_count++;
-                    //   int a = questions[queue[numberofquestioncomplete - 1]];
-                    // int c=queue[numberofquestioncomplete - 1];
-                    //int b =correct_answer[queue[numberofquestioncomplete - 1]];
-                    //  displayquestion_another(a,c,b,1);
 
-                    //wrong_questions[wrong_question_counter] = a;
-                    // wrong_question_counter++;
-                    //wrong_ans_count++;
                 }
-                //anscnt++;
             }
-            if (opt3.isPressed() == true) {
+            if (opt3.isPressed()) {
                 if (correct_answer[queue[numberofquestioncomplete - 1]] == 2) {
                     correct_ans_count++;
-                    //Toast.makeText(this, "Your Answer is true", Toast.LENGTH_SHORT).show();
-                    scorcetxt.setText("Your Score is :" + correct_ans_count);
-                    //show_mark(mCurrentIndex);
-                    showgreen(mCurrentIndex);
-                    displayquestion();
-                    anscnt++;
+                    if(mCurrentIndex == 9){
+                        Intent i = new Intent(this,ScoringPage.class);
+                        i.putExtra("Wrong", wrong_ans_count);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        showgreen(mCurrentIndex);
+                        displayquestion();
+                        anscnt++;
+                    }
                 } else {
                     Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
                     wrong_ans_count++;
                     linearLayoutop3.setVisibility(View.GONE);
-                    //  int a = questions[queue[numberofquestioncomplete - 1]];
-                    // int c=queue[numberofquestioncomplete - 1];
-                    //int b =correct_answer[queue[numberofquestioncomplete - 1]];
-                    //displayquestion_another(a,c,b,2);
-
-                    //  wrong_questions[wrong_question_counter] = a;
-                    // wrong_question_counter++;
-                    //wrong_ans_count++;
-                    //
                 }
-                // anscnt++;
-            }
-            if (anscnt <= 10) {
-                //   displayquestion();
-            }
+            }}
+        if (anscnt <= 10) {
+            //   displayquestion();
         }
+        //}
     }
 
     //    private void displayquestion_another(int a,int b,int c,int d) {
@@ -515,9 +515,11 @@ public class Colours_question_act extends AppCompatActivity {
         }
 
     }
+
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(this,FinalmainScreen.class));
+        startActivity(new Intent(this, FinalmainScreen.class));
         super.onBackPressed();
+        finish();
     }
 }

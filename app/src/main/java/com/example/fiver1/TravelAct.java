@@ -18,19 +18,19 @@ public class TravelAct extends AppCompatActivity {
     private static final String TAG = "GETB";
     int mCurrentIndex=-1;
     int[] questions;
+    int seq;
     int[][] answers;
     int[] wrong_questions;
     View greendot1,greendot2,greendot3,greendot4,greendot5,greendot6,greendot7,greendot8,greendot9,greendot10;
 
     int wrong_question_counter =0;
     ImageView mainimg,img1,img2,img3,checkboxanswer1,checkboxanswer2,checkboxanswer3,checkboxanswer4,checkboxanswer5,checkboxanswer6,checkboxanswer7,checkboxanswer8,checkboxanswer9,checkboxanswer10;
-int seq;
+
     int queue[]=new int[10];
     int numberofquestioncomplete = 0;
     LinearLayout linearLayoutop1,linearLayoutop2,linearLayoutop3;
     int answerlog[] = new int[10];
-    int anscnt = 1,wrong_ans_count=0;
-
+    int anscnt = 0,wrong_ans_count=0;
     TextView scorcetxt;
     int correct_ans_count=0;
     int correct_answer[] = new int[10];
@@ -50,7 +50,6 @@ int seq;
         //final question list is return
         return question_list;
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,48 +145,53 @@ int seq;
 
     private void condition() {
 
-        if (anscnt > 10) {
-           if(seq==0 || seq==1 || seq==2 || seq==3 ||seq==4 || seq==5|| seq==6){
-            finish();}
-           else {
-               Toast.makeText(getApplicationContext(),"Quiz is completed. Thankyou", Toast.LENGTH_LONG).show();
+        if (anscnt >= 10) {
+            if(seq==0 || seq==1 || seq==2 || seq==3 ||seq==4 || seq==5|| seq==6){
+                finish();
+            }
+            else {
+                Toast.makeText(getApplicationContext(),"Quiz is completed. Thankyou", Toast.LENGTH_LONG).show();
+                //  scorcetxt.setText("Your_Score_is_:"+correct_ans_count+"Wrong :"+wrong_ans_count);
 
-               //  scorcetxt.setText("Your_Score_is_:"+correct_ans_count+"Wrong :"+wrong_ans_count);
-
-               // showwronglist();
-               Intent i = new Intent(this,ScoringPage.class);
-               //    String user_name = i.getStringExtra("name");
-               // here i just want to pass array to next activity
-               // Intent intd = new Intent(getApplicationContext(), ScoringPage.class);
-               //intd.putExtra("user_name",user_name);
-               i.putExtra("Wrong", Integer.toString(wrong_ans_count));
-               startActivity(i);
-               finish();
-           }
+                // showwronglist();
+                Intent i = new Intent(this,ScoringPage.class);
+                //    String user_name = i.getStringExtra("name");
+                // here i just want to pass array to next activity
+                // Intent intd = new Intent(getApplicationContext(), ScoringPage.class);
+                //intd.putExtra("user_name",user_name);
+                i.putExtra("Wrong", wrong_ans_count);
+                startActivity(i);
+                finish();
+            }
         }
 
+        else {
+            ImageView opt1 = (ImageView) findViewById(R.id.image1x);
+            ImageView opt2 = (ImageView) findViewById(R.id.imagce2);
+            ImageView opt3 = (ImageView) findViewById(R.id.imagne3);
+            // ImageButton opt4 = (ImageButton) findViewById(R.id.option4);
 
-        ImageView opt1 = (ImageView) findViewById(R.id.image1x);
-        ImageView opt2 = (ImageView) findViewById(R.id.imagce2);
-        ImageView opt3 = (ImageView) findViewById(R.id.imagne3);
-        // ImageButton opt4 = (ImageButton) findViewById(R.id.option4);
 
+            //if (anscnt < 10 ) {
 
-        if (anscnt <= 10 ) {
-
-            if (opt1.isPressed() == true) {
+            if (opt1.isPressed()) {
                 if ((correct_answer[queue[numberofquestioncomplete - 1]] == 0)) {
                     correct_ans_count++;
-                    // Toast.makeText(this, "Your Answer is true", Toast.LENGTH_SHORT).show();
-                   // scorcetxt.setText("Your Score is :" + correct_ans_count);
-                    // show_mark(mCurrentIndex);
-                    showgreen(mCurrentIndex);
-                    displayquestion();
-                    anscnt++;
+                    if(mCurrentIndex == 9){
+                        Intent i = new Intent(this,ScoringPage.class);
+                        i.putExtra("Wrong", wrong_ans_count);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        showgreen(mCurrentIndex);
+                        displayquestion();
+                        anscnt++;}
                 } else {
                     Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
                     wrong_ans_count++;
                     linearLayoutop1.setVisibility(View.GONE);
+
                     // int a = questions[queue[numberofquestioncomplete - 1]];
                     //int c=queue[numberofquestioncomplete - 1];
                     //int b =correct_answer[queue[numberofquestioncomplete - 1]];
@@ -210,59 +214,53 @@ int seq;
                 }
                 //ans
             }
-            if (opt2.isPressed() == true) {
+            if (opt2.isPressed()) {
                 if ((correct_answer[queue[numberofquestioncomplete - 1]] == 1)) {
                     correct_ans_count++;
                     //Toast.makeText(this,"Your Answer is true", Toast.LENGTH_SHORT).show();
                     //scorcetxt.setText("Your Score is :" + correct_ans_count);
                     //show_mark(mCurrentIndex);
-                    showgreen(mCurrentIndex);
-                    displayquestion();
-                    anscnt++;
+                    if(mCurrentIndex == 9){
+                        Intent i = new Intent(this,ScoringPage.class);
+                        i.putExtra("Wrong", wrong_ans_count);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        showgreen(mCurrentIndex);
+                        displayquestion();
+                        anscnt++;}
                 } else {
                     Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
                     linearLayoutop2.setVisibility(View.GONE);
                     wrong_ans_count++;
-                    //   int a = questions[queue[numberofquestioncomplete - 1]];
-                    // int c=queue[numberofquestioncomplete - 1];
-                    //int b =correct_answer[queue[numberofquestioncomplete - 1]];
-                    //  displayquestion_another(a,c,b,1);
 
-                    //wrong_questions[wrong_question_counter] = a;
-                    // wrong_question_counter++;
-                    //wrong_ans_count++;
                 }
-                //anscnt++;
             }
-            if (opt3.isPressed() == true) {
+            if (opt3.isPressed()) {
                 if (correct_answer[queue[numberofquestioncomplete - 1]] == 2) {
                     correct_ans_count++;
-                    //Toast.makeText(this, "Your Answer is true", Toast.LENGTH_SHORT).show();
-                    //scorcetxt.setText("Your Score is :" + correct_ans_count);
-                    //show_mark(mCurrentIndex);
-                    showgreen(mCurrentIndex);
-                    displayquestion();
-                    anscnt++;
+                    if(mCurrentIndex == 9){
+                        Intent i = new Intent(this,ScoringPage.class);
+                        i.putExtra("Wrong", wrong_ans_count);
+                        startActivity(i);
+                        finish();
+                    }
+                    else {
+                        showgreen(mCurrentIndex);
+                        displayquestion();
+                        anscnt++;
+                    }
                 } else {
                     Toast.makeText(this, "Your Answer is wrong", Toast.LENGTH_SHORT).show();
                     wrong_ans_count++;
                     linearLayoutop3.setVisibility(View.GONE);
-                    //  int a = questions[queue[numberofquestioncomplete - 1]];
-                    // int c=queue[numberofquestioncomplete - 1];
-                    //int b =correct_answer[queue[numberofquestioncomplete - 1]];
-                    //displayquestion_another(a,c,b,2);
-
-                    //  wrong_questions[wrong_question_counter] = a;
-                    // wrong_question_counter++;
-                    //wrong_ans_count++;
-                    //
                 }
-                // anscnt++;
-            }
-            if (anscnt <= 10) {
-                //   displayquestion();
-            }
+            }}
+        if (anscnt <= 10) {
+            //   displayquestion();
         }
+        //}
     }
 
     //    private void displayquestion_another(int a,int b,int c,int d) {
