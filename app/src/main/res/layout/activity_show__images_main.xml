@@ -9,31 +9,42 @@
     android:paddingEnd="16dp"
     tools:context=".Show_ImagesMain">
 
-<GridView
-    android:id="@+id/activity_main_grid_view"
-    android:numColumns="auto_fit"
-    android:verticalSpacing="4dp"
-    android:gravity="center"
-    android:horizontalSpacing="4dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    <GridView
+        android:id="@+id/activity_main_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="661dp"
+        android:gravity="center"
+        android:horizontalSpacing="4dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="4dp" />
 
     <TextView
-    android:id="@+id/activity_main_empty_view"
-    android:textAppearance="?android:textAppearanceLarge"
-    android:text="@string/activity_main_empty_view_text"
-    android:gravity="center"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+        android:id="@+id/activity_main_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="676dp"
+        android:gravity="center"
+        android:text="@string/activity_main_empty_view_text"
+        android:textAppearance="?android:textAppearanceLarge" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/myFAB"
     android:layout_gravity="bottom|end"
-    android:layout_marginBottom="16dp"
+    android:layout_marginBottom="46dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:src="@drawable/icon_plus"
     android:onClick="addNewMemory"
     app:elevation="4dp" />
 
-    </FrameLayout>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/Banner_ad"
+        android:layout_gravity="bottom|center"/>
+
+</FrameLayout>

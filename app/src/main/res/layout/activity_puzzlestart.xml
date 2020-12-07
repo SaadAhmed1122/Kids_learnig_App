@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Puzzlestart">
 
-    <com.example.fiver1.view.PuzzleView
+    <com.kidsapp.fiver1.view.PuzzleView
         android:id="@+id/puzzleView"
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
@@ -14,13 +14,13 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="0dp" />
 
-    <com.example.fiver1.layout.PuzzleLayout
+    <com.kidsapp.fiver1.layout.PuzzleLayout
         android:id="@+id/activity_swipe_card"
         android:layout_width="match_parent"
         android:layout_marginTop="30dp"
         android:layout_height="400dp">
 
-    </com.example.fiver1.layout.PuzzleLayout>
+    </com.kidsapp.fiver1.layout.PuzzleLayout>
 
     <ImageView
         android:id="@+id/imageView9"

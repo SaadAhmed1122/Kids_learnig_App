@@ -4,29 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+android:background="@drawable/colorful"
+
     tools:context=".ScoringPage">
 
     <TextView
-        android:id="@+id/scrore"
+        android:id="@+id/reward_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
-        android:text="TextView"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="62dp"
+        android:text="@string/well_done_well_played"
         android:textColor="#000000"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reword" />
+        app:layout_constraintTop_toBottomOf="@+id/reward_star" />
 
     <ImageView
-        android:id="@+id/reword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="51dp"
+        android:id="@+id/reword_img"
+        android:layout_width="251dp"
+        android:layout_height="153dp"
+        android:layout_marginTop="38dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/reinforce1" />
+        app:srcCompat="@drawable/reward_2323917_2155564" />
+
+    <ImageView
+        android:id="@+id/reward_star"
+        android:layout_width="217dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="282dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="282dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reword_img"
+        app:srcCompat="@drawable/reawar_start3" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -122,34 +122,25 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="28dp"
-        android:text="SET UP A SEQUENCE OF ACTIVITIES'"
+        android:fontFamily="@font/aclonica"
+        android:text="Pictorial Quiz Game of Kids"
         android:textColor="#000000"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:onClick="sequenceact"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="87dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/plus" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="77dp"
         android:layout_height="63dp"
         android:layout_marginTop="16dp"
+        android:onClick="Undercontruction"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/borders"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.824"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gifticon" />
 
@@ -321,7 +312,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="20dp"
-        android:text="ICONIC AGENDA"
+        android:text="Memory Gallery"
         android:textColor="#91B7E3"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -345,10 +336,11 @@
         android:id="@+id/imageView10"
         android:layout_width="67dp"
         android:layout_height="50dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="20dp"
         android:onClick="stopmusic"
         app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/soundoff" />
 

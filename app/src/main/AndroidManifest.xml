@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.fiver1">
+    package="com.kidsapp.fiver1">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +14,7 @@
         android:roundIcon="@drawable/kuto"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen" android:screenOrientation="landscape">
+        <activity android:name="com.kidsapp.fiver1.SplashScreen" android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,57 +22,69 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Vehicals_Act"
+            android:name="com.kidsapp.fiver1.Vehicals_Act"
             android:screenOrientation="landscape" />
-        <activity android:name=".Puzzlestart" />
+        <activity android:name="com.kidsapp.fiver1.Puzzlestart" />
         <activity
-            android:name=".Puzzlemainscreen"
+            android:name="com.kidsapp.fiver1.Puzzlemainscreen"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TravelAct"
+            android:name="com.kidsapp.fiver1.TravelAct"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".FoodActivity"
+            android:name="com.kidsapp.fiver1.FoodActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Animals_question"
+            android:name="com.kidsapp.fiver1.Animals_question"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".NumbersAct"
+            android:name="com.kidsapp.fiver1.NumbersAct"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Sequencegame"
+            android:name="com.kidsapp.fiver1.Sequencegame"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".FinalmainScreen"
+            android:name="com.kidsapp.fiver1.FinalmainScreen"
             android:screenOrientation="landscape">
 
         </activity>
         <activity
-            android:name=".Colours_question_act"
+            android:name="com.kidsapp.fiver1.Colours_question_act"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Test3"
+            android:name="com.kidsapp.fiver1.Test3"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".EmoQuestionsActivity"
+            android:name="com.kidsapp.fiver1.EmoQuestionsActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme2" />
         <activity
-            android:name=".TestActivity"
+            android:name="com.kidsapp.fiver1.TestActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".ScoringPage" />
-        <activity android:name=".AddImge" />
-        <activity android:name=".Show_ImagesMain" />
+        <activity android:name="com.kidsapp.fiver1.ScoringPage" android:screenOrientation="landscape"/>
+        <activity android:name="com.kidsapp.fiver1.AddImge" />
+        <activity android:name="com.kidsapp.fiver1.Show_ImagesMain" />
         <activity
-            android:name=".FirstQuestionAct"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".GraphicActivity"
+            android:name="com.kidsapp.fiver1.FirstQuestionAct"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.kidsapp.fiver1.GraphicActivity"
             android:screenOrientation="landscape" />
+        <activity
+            android:name="com.kidsapp.fiver1.MainActivity"
+            android:screenOrientation="landscape" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+
+
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7520984438935131~4453963759"/>
+
     </application>
 
 </manifest>

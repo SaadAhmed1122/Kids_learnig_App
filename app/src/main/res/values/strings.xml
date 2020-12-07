@@ -9,5 +9,19 @@
     <string name="TituloGanar">Congratulation</string>
     <string name="DescGanar">You Solve all Puzzle</string>
     <string name="OK">OK</string>
+    <string name="well_done_well_played">Great Well Played</string>
+
+<!--    Oriinal Ids of ads-->
+    <string name="Banner_ad">ca-app-pub-7520984438935131/5383902041</string>
+    <string name="Intusitus_ad">ca-app-pub-7520984438935131/6368668895</string>
+    <string name="reward_ad">ca-app-pub-7520984438935131/4213262930</string>
+
+
+<!--&lt;!&ndash;    Test ids&ndash;&gt;-->
+<!--    <string name="Banner_ad">ca-app-pub-3940256099942544/6300978111</string>-->
+<!--    <string name="Intusitus_ad">ca-app-pub-3940256099942544/1033173712</string>-->
+<!--    <string name="reward_ad">ca-app-pub-3940256099942544/5224354917</string>-->
+
+
 
 </resources>
