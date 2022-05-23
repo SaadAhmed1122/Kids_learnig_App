@@ -121,6 +121,10 @@ public class ScoringPage extends AppCompatActivity {
 
 
 
+        AdsClass aa= new AdsClass(ScoringPage.this);
+//        aa.showintertialeAds();
+//        aa.rewardedads();
+
     }
 
     @Override

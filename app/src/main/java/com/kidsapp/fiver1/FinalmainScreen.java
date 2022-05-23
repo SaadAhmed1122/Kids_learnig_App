@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -44,9 +45,12 @@ public class FinalmainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finalmain_screen);
+        AdsClass aa= new AdsClass(FinalmainScreen.this);
+        aa.showintertialeAds();
         stopmus= (ImageView) findViewById(R.id.imageView10);
         mediaPlayer = MediaPlayer.create(FinalmainScreen.this, R.raw.background_music);
        // mediaPlayer.start(); // no need to call prepare(); create() does that for you
+
 
 //        Ads Start
         mInterstitialAd = new InterstitialAd(this);

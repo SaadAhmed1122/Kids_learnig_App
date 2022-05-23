@@ -2,19 +2,24 @@ package com.kidsapp.fiver1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 public class SplashScreen extends AppCompatActivity {
 
+    private static final String TAG = "Intersitial Ads facebook" ;
     ImageView image1,image2,image3,imagebtn;
     TextView main_text;
+
     MediaPlayer mediaPlayer;
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -67,7 +72,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     public void showmain(View view) {
-        startActivity(new Intent(SplashScreen.this,FinalmainScreen.class));
+        startActivity(new Intent(SplashScreen.this,Select_act.class));
         finish();
     }
 

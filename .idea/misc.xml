@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_cards.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_colours_question_act.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_contact.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_action.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_cards.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_category.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_classic.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_contact.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_finalmain_screen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_game_loader.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_game_main.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_mind.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_no_internet.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_racing.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_select.xml" value="0.13" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/activity_splash_screen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Saad/AndroidStudioProjects/Fiver1/app/src/main/res/layout/bottom_sheet_dialog_layout.xml" value="0.20416666666666666" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

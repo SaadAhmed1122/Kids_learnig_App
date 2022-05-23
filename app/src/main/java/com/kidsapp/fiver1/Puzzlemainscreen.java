@@ -42,6 +42,8 @@ public class Puzzlemainscreen extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_puzzlemainscreen);
+        AdsClass aa= new AdsClass(Puzzlemainscreen.this);
+        aa.showintertialeAds();
 
         bplay_game = (Button) findViewById(R.id.bJugar);
 
